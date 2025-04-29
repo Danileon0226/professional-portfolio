@@ -1,11 +1,7 @@
-import { BrowserRouter as Router, useRoutes } from "react-router-dom";
-import routes from "./routes";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 import { ThemeProvider } from "./hooks/use-theme";
 import { useEffect } from "react";
-
-function AppRoutes() {
-  return useRoutes(routes);
-}
 
 // Componente para inicializar el tema
 function ThemeInitializer() {
@@ -21,9 +17,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
       <ThemeInitializer />
-      <Router>
-        <AppRoutes />
-      </Router>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }

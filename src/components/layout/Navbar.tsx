@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { useTheme } from "../../hooks/use-theme";
+import logo from "../../../public/images/logo.png";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const { theme } = useTheme();
+  const location = useLocation();
 
   const navItems = [
-    { label: "PROYECTOS", href: "#projects" },
+    { label: "PROYECTOS", href: "/projects" },
     { label: "EXPERIENCIA", href: "#experience" },
     { label: "BLOG", href: "#blog" },
     { label: "SOBRE MÍ", href: "#about" },
@@ -29,9 +32,9 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
-            DS
-          </span>
+          <Link to="/">
+            <img src={logo} alt="logo" width={110} height={110} />
+          </Link>
         </motion.div>
 
         {/* Navigation */}
@@ -42,16 +45,29 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button
-                className="text-sm font-medium tracking-wide transition-colors hover:text-foreground/80 text-foreground/60"
-                onClick={() => {
-                  document
-                    .querySelector(item.href)
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                {item.label}
-              </button>
+              {item.href.startsWith("/") ? (
+                <Link
+                  to={item.href}
+                  className={`text-sm font-medium tracking-wide transition-colors hover:text-foreground/80 ${
+                    location.pathname === item.href
+                      ? "text-foreground"
+                      : "text-foreground/60"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  className="text-sm font-medium tracking-wide transition-colors hover:text-foreground/80 text-foreground/60"
+                  onClick={() => {
+                    document
+                      .querySelector(item.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {item.label}
+                </button>
+              )}
             </motion.div>
           ))}
         </div>
