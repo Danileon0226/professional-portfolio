@@ -59,9 +59,9 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-24 relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-600/10 to-blue-600/10 blur-3xl -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-purple-600/20 to-blue-600/20 dark:from-primary/10 dark:via-purple-600/10 dark:to-blue-600/10 blur-3xl -z-10" />
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -121,7 +121,7 @@ const Home = () => {
               >
                 <Badge
                   variant="secondary"
-                  className="w-full text-center text-base px-4 py-2 hover-scale shadow-custom"
+                  className="w-full text-center text-base px-4 py-2 hover-scale shadow-custom dark:bg-secondary/80 dark:text-secondary-foreground"
                 >
                   {skill}
                 </Badge>
@@ -148,7 +148,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="group relative bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border/50"
+                className="group relative bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border/50 dark:bg-card/95"
               >
                 <div className="relative aspect-[16/9] ">
                   <img
@@ -159,7 +159,7 @@ const Home = () => {
                       e.currentTarget.src = "/default-project.jpg";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent dark:from-black/95 dark:via-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
