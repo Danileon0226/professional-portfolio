@@ -207,17 +207,17 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Breadcrumbs />
-      <main className="container mx-auto px-4 sm:px-6 py-16">
+      <main className="container mx-auto px-2 sm:px-4 md:px-6 py-10 sm:py-16">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-24 relative"
+          className="text-center mb-16 sm:mb-24 relative"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-purple-600/30 to-blue-600/40 dark:bg-gradient-custom blur-[100px] -z-10" />
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground dark:text-white"
+            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-foreground dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -225,7 +225,7 @@ const Home = () => {
             Desarrollador Full Stack
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground dark:text-gray-200 max-w-3xl mx-auto mb-12"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground dark:text-gray-200 max-w-3xl mx-auto mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -234,13 +234,13 @@ const Home = () => {
             Especializado en desarrollo web moderno y soluciones escalables.
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
+            className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4 w-full max-w-xs sm:max-w-none mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button
-              className="hover-scale shadow-custom px-8 py-6 text-lg"
+              className="hover-scale shadow-custom px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
               variant="default"
               size="lg"
             >
@@ -248,7 +248,7 @@ const Home = () => {
               Contactar
             </Button>
             <Button
-              className="hover-scale shadow-custom px-8 py-6 text-lg"
+              className="hover-scale shadow-custom px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
               variant="outline"
               size="lg"
             >
@@ -263,33 +263,39 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-24"
+          className="mb-16 sm:mb-24"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
             Sobre Mí
           </h2>
           <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-48 h-48 rounded-full overflow-hidden">
+            <CardContent className="p-4 sm:p-8">
+              <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center justify-center">
+                <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden">
                   <img
                     src={profile}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex-1">
-                  <p className="text-lg mb-4">
+                <div className="flex-1 w-full">
+                  <p className="text-base sm:text-lg mb-4">
                     Desarrollador Full Stack apasionado por crear soluciones
                     digitales innovadoras. Con más de 4 años de experiencia en
                     el desarrollo web moderno.
                   </p>
-                  <div className="flex gap-4">
-                    <Button variant="outline" className="gap-2">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+                    <Button
+                      variant="outline"
+                      className="gap-2 w-full sm:w-auto"
+                    >
                       <User className="w-4 h-4" />
                       Ver CV Completo
                     </Button>
-                    <Button variant="default" className="gap-2">
+                    <Button
+                      variant="default"
+                      className="gap-2 w-full sm:w-auto"
+                    >
                       <Download className="w-4 h-4" />
                       Descargar CV
                     </Button>
@@ -305,12 +311,12 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-24"
+          className="mb-16 sm:mb-24"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
             Habilidades Técnicas
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
             {skills.map((skill) => (
               <SkillCard key={skill.name} {...skill} />
             ))}
@@ -319,14 +325,14 @@ const Home = () => {
 
         {/* Stats Section */}
         <motion.section
-          className="mb-24 py-16 bg-primary/5 dark:bg-primary/10 rounded-3xl"
+          className="mb-16 sm:mb-24 py-10 sm:py-16 bg-primary/5 dark:bg-primary/10 rounded-3xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="container mx-auto px-0 sm:px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -345,7 +351,7 @@ const Home = () => {
                     <stat.icon className="w-6 h-6 text-primary" />
                   </div>
                   <motion.h3
-                    className="text-4xl font-bold mb-2 text-foreground"
+                    className="text-2xl sm:text-4xl font-bold mb-2 text-foreground"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
@@ -360,7 +366,9 @@ const Home = () => {
                       {stat.value}+
                     </motion.span>
                   </motion.h3>
-                  <p className="text-muted-foreground">{stat.label}</p>
+                  <p className="text-muted-foreground text-sm sm:text-base">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -372,25 +380,29 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-24"
+          className="mb-16 sm:mb-24"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
             Experiencia Profesional
           </h2>
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-8 px-2 sm:px-0">
             {experiences.map((exp, index) => (
               <Card key={index} className="relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
                       {exp.period}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{exp.position}</h3>
-                  <h4 className="text-lg text-primary mb-4">{exp.company}</h4>
-                  <p className="text-muted-foreground mb-4">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
+                    {exp.position}
+                  </h3>
+                  <h4 className="text-base sm:text-lg text-primary mb-2 sm:mb-4">
+                    {exp.company}
+                  </h4>
+                  <p className="text-muted-foreground text-sm sm:text-base mb-2 sm:mb-4">
                     {exp.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -411,9 +423,9 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-24 relative"
+          className="mb-16 sm:mb-24 relative"
         >
-          <h2 className="text-3xl font-bold mb-16 text-center text-foreground dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16 text-center text-foreground dark:text-white">
             Proyectos Destacados
           </h2>
 
@@ -422,13 +434,13 @@ const Home = () => {
               align: "start",
               loop: true,
             }}
-            className="w-full max-w-6xl mx-auto px-4"
+            className="w-full max-w-6xl mx-auto px-2 sm:px-4"
           >
             <CarouselContent>
               {projects.map((project, index) => (
                 <CarouselItem
                   key={project.title}
-                  className="md:basis-1/2 lg:basis-1/3"
+                  className="basis-full md:basis-1/2 lg:basis-1/3"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -440,13 +452,13 @@ const Home = () => {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full max-w-full"
                         onError={(e) => {
                           e.currentTarget.src = "/default-project.jpg";
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent dark:from-black/95 dark:via-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-4 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-4 transition-transform duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/30 to-transparent dark:from-black/95 dark:via-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-4 left-0 right-0 p-2 sm:p-4 transform translate-y-full group-hover:translate-y-4 transition-transform duration-300">
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech) => (
                             <Badge
@@ -461,14 +473,14 @@ const Home = () => {
                       </div>
                     </div>
 
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-3 transition-colors">
+                    <div className="p-4 sm:p-6">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                      <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-4 line-clamp-2">
                         {project.description}
                       </p>
-                      <div className="flex gap-3">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                         <Button
                           variant="default"
                           size="sm"
@@ -517,9 +529,9 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-24"
+          className="mb-16 sm:mb-24"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
             Testimonios
           </h2>
           <Carousel
@@ -530,13 +542,13 @@ const Home = () => {
               dragFree: true,
               duration: 25,
             }}
-            className="w-full max-w-5xl mx-auto"
+            className="w-full max-w-5xl mx-auto px-2 sm:px-0"
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem
                   key={index}
-                  className="md:basis-1/2 lg:basis-1/3 pl-4"
+                  className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -544,8 +556,8 @@ const Home = () => {
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                   >
                     <Card className="relative">
-                      <CardContent className="p-6">
-                        <div className="mb-6">
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="mb-4 sm:mb-6">
                           <motion.div
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
@@ -555,7 +567,7 @@ const Home = () => {
                               damping: 20,
                               delay: 0.1 + index * 0.1,
                             }}
-                            className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary"
+                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-primary"
                           >
                             <img
                               src={testimonial.avatar}
@@ -571,7 +583,7 @@ const Home = () => {
                             duration: 0.5,
                             delay: 0.3 + index * 0.1,
                           }}
-                          className="text-muted-foreground italic mb-4"
+                          className="text-muted-foreground italic text-sm sm:text-base mb-2 sm:mb-4"
                         >
                           "{testimonial.content}"
                         </motion.p>
@@ -583,8 +595,10 @@ const Home = () => {
                             delay: 0.4 + index * 0.1,
                           }}
                         >
-                          <h4 className="font-semibold">{testimonial.name}</h4>
-                          <p className="text-sm text-muted-foreground">
+                          <h4 className="font-semibold text-sm sm:text-base">
+                            {testimonial.name}
+                          </h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
                             {testimonial.position}
                           </p>
                         </motion.div>
@@ -604,24 +618,25 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-10 sm:mt-16 text-center"
         >
-          <h2 className="text-3xl font-bold mb-12 text-foreground dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-foreground dark:text-white">
             ¿Listo para Colaborar?
           </h2>
           <Card className="max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <p className="text-lg mb-8">
+            <CardContent className="p-4 sm:p-8">
+              <p className="text-base sm:text-lg mb-6 sm:mb-8">
                 Estoy siempre interesado en nuevos proyectos y oportunidades de
                 colaboración. ¡No dudes en contactarme!
               </p>
-              <div className="flex justify-center gap-6">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 w-full">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
                   <Button
-                    className="hover-scale shadow-custom"
+                    className="hover-scale shadow-custom w-full sm:w-auto"
                     variant="default"
                     size="lg"
                   >
@@ -632,9 +647,10 @@ const Home = () => {
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
                   <Button
-                    className="hover-scale shadow-custom"
+                    className="hover-scale shadow-custom w-full sm:w-auto"
                     variant="outline"
                     size="lg"
                   >
