@@ -18,7 +18,6 @@ import Navbar from '@/components/layout/Navbar';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 //imagenes proyectos
-import defaultProject from '../../public/images/default-proyect.jpg';
 import Afan from '../../public/images/proyects/afan.png';
 import Terminal from '../../public/images/proyects/terminalsur.png';
 import Tecnotics from '../../public/images/proyects/tecnotics.png';
