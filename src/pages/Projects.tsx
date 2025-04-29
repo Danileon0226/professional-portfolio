@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import { Github, ArrowRight, ExternalLink } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
@@ -90,7 +90,6 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] =
     useState<ProjectCategory>("Todos");
   const [selectedTech, setSelectedTech] = useState<TechStack[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProjects = projects.filter((project) => {
     const matchesCategory =
@@ -98,10 +97,7 @@ export default function Projects() {
     const matchesTech =
       selectedTech.length === 0 ||
       selectedTech.every((tech) => project.tech.includes(tech));
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesTech && matchesSearch;
+    return matchesCategory && matchesTech;
   });
 
   return (

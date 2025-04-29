@@ -5,7 +5,6 @@ import { Badge } from "../components/ui/badge";
 import {
   Mail,
   Github,
-  Linkedin,
   ArrowRight,
   Calendar,
   Download,
@@ -14,7 +13,7 @@ import {
   Users,
   GitBranch,
 } from "lucide-react";
-import profile from "../../public/images/skills/profile.jpg";
+import profile from "../../public/images/CV FOTO.jpg";
 import Navbar from "@/components/layout/Navbar";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import defaultProject from "../../public/images/default-proyect.jpg";
@@ -157,25 +156,25 @@ const testimonials = [
     name: "Ana García",
     position: "CEO, TechStart",
     content: "Un desarrollador excepcional con gran atención al detalle.",
-    avatar: "/images/testimonials/ana.jpg",
+    avatar: profile,
   },
   {
     name: "Carlos Ruiz",
     position: "CTO, InnovaSoft",
     content: "Excelente capacidad para resolver problemas complejos.",
-    avatar: "/images/testimonials/carlos.jpg",
+    avatar: profile,
   },
   {
     name: "Carlos Ruiz",
     position: "CTO, InnovaSoft",
     content: "Excelente capacidad para resolver problemas complejos.",
-    avatar: "/images/testimonials/carlos.jpg",
+    avatar: profile,
   },
   {
     name: "Carlos Ruiz",
     position: "CTO, InnovaSoft",
     content: "Excelente capacidad para resolver problemas complejos.",
-    avatar: "/images/testimonials/carlos.jpg",
+    avatar: profile,
   },
 ];
 
@@ -446,7 +445,7 @@ const Home = () => {
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent dark:from-black/95 dark:via-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <div className="absolute bottom-4 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-4 transition-transform duration-300">
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech) => (
                             <Badge
