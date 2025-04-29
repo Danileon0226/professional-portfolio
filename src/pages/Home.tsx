@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import profile from "../../public/images/skills/profile.jpg";
 import Navbar from "@/components/layout/Navbar";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import defaultProject from "../../public/images/default-proyect.jpg";
 import { SkillCard } from "../components/ui/skill-card";
 import { Card, CardContent } from "../components/ui/card";
@@ -205,6 +206,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Breadcrumbs />
       <main className="container mx-auto px-4 sm:px-6 py-16">
         {/* Hero Section */}
         <motion.div

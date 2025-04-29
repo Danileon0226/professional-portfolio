@@ -11,6 +11,7 @@ import {
 } from "../components/ui/card";
 import { Github, ArrowRight, ExternalLink } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
 // Tipos de proyectos
 type ProjectCategory = "Todos" | "Web" | "Mobile" | "Desktop" | "API";
@@ -106,6 +107,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <Breadcrumbs />
       <main className="container mx-auto px-4 py-16">
         {/* Header */}
         <motion.div
