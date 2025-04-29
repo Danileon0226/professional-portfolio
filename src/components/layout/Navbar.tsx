@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/button';
 import { ThemeToggle } from '../ui/theme-toggle';
 import { useTheme } from '../../hooks/use-theme';
-import logo from '../../../public/images/logo.png';
+import logo from '../../../public/images/ZERO.png';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'INICIO', href: '/' },
-    { label: 'PROYECTOS', href: '/projects' },
+  { label: 'PROYECTOS', href: '/projects' },
   { label: 'SOBRE MÍ', href: '/about' },
 ];
 
@@ -58,10 +58,10 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo de Daniel-Zero, desarrollador web"
-              width={110}
-              height={110}
+              width={130}
+              height={130}
               loading="lazy"
-              className="max-h-14 w-auto sm:max-h-16 transition-all duration-300"
+              className="max-h-40 w-auto sm:max-h-20 transition-all duration-300"
             />
           </Link>
         </motion.div>

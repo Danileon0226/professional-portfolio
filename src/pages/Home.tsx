@@ -16,8 +16,18 @@ import {
 import profile from '../../public/images/CV FOTO.jpg';
 import Navbar from '@/components/layout/Navbar';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+
+//imagenes proyectos
 import defaultProject from '../../public/images/default-proyect.jpg';
 import Afan from '../../public/images/proyects/afan.png';
+import Terminal from '../../public/images/proyects/terminalsur.png';
+import Tecnotics from '../../public/images/proyects/tecnotics.png';
+import AppsforTheWorld from '../../public/images/proyects/appsfortheworld.png';
+import HemoGroup from '../../public/images/proyects/hemogroup.png';
+import Construredes from '../../public/images/proyects/construredes.png';
+import Vlips from '../../public/images/proyects/vlips.png';
+
+//componentes
 import { SkillCard } from '../components/ui/skill-card';
 import { Card, CardContent } from '../components/ui/card';
 import {
@@ -180,45 +190,61 @@ const projects = [
   {
     title: 'AFAN',
     description: 'Afan existe para devolverle la paz y el control a quienes viven en arriendo. ',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    tech: ['React', 'TypeScript', 'Tailwind'],
     image: Afan,
     github: 'https://github.com/yourusername/ecommerce',
     demo: 'https://afan.com.co/',
   },
   {
-    title: 'E-commerce Platform',
+    title: 'Terminal del Sur',
     description:
-      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    image: defaultProject,
+      'Pagina web para la terminal del sur, la cual es un centro comercial y de transporte en Medellin.',
+    tech: ['React', 'Material UI', 'Vite', 'MongoDB'],
+    image: Terminal,
     github: 'https://github.com/yourusername/ecommerce',
-    demo: 'https://ecommerce-demo.com',
+    demo: 'https://terminaldelsur.com/',
   },
   {
-    title: 'E-commerce Platform',
+    title: 'Apps for the World',
     description:
-      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    image: defaultProject,
+      'Pagina web de la empresa Apps for the World, la cual es una empresa que se encarga de crear aplicaciones para la web.',
+    tech: ['React', 'Jsx', 'Vite'],
+    image: AppsforTheWorld,
     github: 'https://github.com/yourusername/ecommerce',
-    demo: 'https://ecommerce-demo.com',
+    demo: 'https://appsfortheworld.com/',
   },
   {
-    title: 'CRM System',
+    title: 'TecnoTics',
     description:
       'Sistema de gestión de relaciones con clientes con análisis en tiempo real y automatización de procesos.',
     tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-    image: defaultProject,
+    image: Tecnotics,
     github: 'https://github.com/yourusername/crm',
-    demo: 'https://crm-demo.com',
+    demo: 'https://www.tecnotics.com/quienes-somos',
   },
   {
-    title: 'Portfolio Website',
+    title: 'HemoGroup',
+    description: 'Sitio web personal moderno constuido para la empresa HemoGroup.',
+    tech: ['React', 'Material UI', 'Framer Motion'],
+    image: HemoGroup,
+    github: 'https://github.com/yourusername/portfolio',
+    demo: 'https://hemogroup.tecnotics.co/',
+  },
+  {
+    title: 'Construredes',
     description: 'Sitio web personal moderno construido con las últimas tecnologías web.',
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
-    image: defaultProject,
+    image: Construredes,
     github: 'https://github.com/yourusername/portfolio',
     demo: 'https://portfolio-demo.com',
+  },
+  {
+    title: 'VLIPS',
+    description: 'Sitio web personal moderno construido con las últimas tecnologías web.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+    image: Vlips,
+    github: 'https://github.com/yourusername/portfolio',
+    demo: 'https://vlips.co/',
   },
 ];
 
