@@ -33,7 +33,13 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <Link to="/">
-            <img src={logo} alt="logo" width={110} height={110} />
+            <img
+              src={logo}
+              alt="Logo de Daniel-Zero, desarrollador web"
+              width={110}
+              height={110}
+              loading="lazy"
+            />
           </Link>
         </motion.div>
 

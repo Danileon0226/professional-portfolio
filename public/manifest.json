@@ -1,0 +1,22 @@
+{
+  "name": "Daniel-Zero Portfolio",
+  "short_name": "Portfolio",
+  "description": "Portfolio profesional de Daniel-Zero, desarrollador web full stack.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/public/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/public/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
