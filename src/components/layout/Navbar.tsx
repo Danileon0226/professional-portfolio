@@ -1,50 +1,71 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ThemeToggle } from '../ui/theme-toggle';
+import { motion } from "framer-motion";
+import { Button } from "../ui/button";
+import { ThemeToggle } from "../ui/theme-toggle";
+import { useTheme } from "../../hooks/use-theme";
 
 const Navbar = () => {
+  const { theme } = useTheme();
+
+  const navItems = [
+    { label: "PROYECTOS", href: "#projects" },
+    { label: "EXPERIENCIA", href: "#experience" },
+    { label: "BLOG", href: "#blog" },
+    { label: "SOBRE MÍ", href: "#about" },
+  ];
+
   return (
     <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border"
+      className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mb-8 ${
+        theme === "dark" ? "border-gray-800" : "border-gray-200"
+      }`}
     >
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-primary">
-          Portfolio
-        </Link>
-        
-        <div className="flex items-center gap-6">
-          <Link
-            to="/"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Inicio
-          </Link>
-          <Link
-            to="/proyectos"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Proyectos
-          </Link>
-          <Link
-            to="/sobre-mi"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Sobre Mí
-          </Link>
-          <Link
-            to="/contacto"
-            className="text-foreground/80 hover:text-foreground transition-colors"
-          >
-            Contacto
-          </Link>
+      <div className="container flex h-16 items-center justify-between">
+        {/* Logo */}
+        <motion.div
+          className="flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
+            DS
+          </span>
+        </motion.div>
+
+        {/* Navigation */}
+        <div className="flex items-center gap-8">
+          {navItems.map((item) => (
+            <motion.div
+              key={item.label}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <button
+                className="text-sm font-medium tracking-wide transition-colors hover:text-foreground/80 text-foreground/60"
+                onClick={() => {
+                  document
+                    .querySelector(item.href)
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                {item.label}
+              </button>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Actions */}
+        <div className="flex items-center gap-4">
           <ThemeToggle />
+          <Button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600">
+            CONTACTO
+          </Button>
         </div>
       </div>
     </motion.nav>
   );
 };
 
-export default Navbar; 
+export default Navbar;
