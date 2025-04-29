@@ -104,6 +104,7 @@ export default function Projects() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Breadcrumbs />
+
       <main className="container mx-auto px-4 py-16">
         {/* Header */}
         <motion.div

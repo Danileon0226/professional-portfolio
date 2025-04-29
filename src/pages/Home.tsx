@@ -26,6 +26,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../components/ui/carousel";
+import Footer from "../components/layout/Footer";
 
 const skills = [
   {
@@ -646,6 +647,7 @@ const Home = () => {
           </Card>
         </motion.section>
       </main>
+      <Footer />
     </div>
   );
 };
