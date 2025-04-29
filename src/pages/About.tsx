@@ -11,8 +11,32 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 const skills = [
   {
+    name: 'HTML',
+    icon: '/images/skills/html-5.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'CSS',
+    icon: '/images/skills/css.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'JavaScript',
+    icon: '/images/skills/javascript.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
     name: 'React',
     icon: '/images/skills/react.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'Vite',
+    icon: '/images/skills/vitejs.svg',
     level: 'Avanzado' as const,
     yearsOfExperience: 3,
   },
@@ -23,14 +47,26 @@ const skills = [
     yearsOfExperience: 2,
   },
   {
-    name: 'Node.js',
-    icon: '/images/skills/nodejs.svg',
-    level: 'Intermedio' as const,
-    yearsOfExperience: 2,
+    name: 'Material UI',
+    icon: '/images/skills/material-ui.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'Shadcn UI',
+    icon: '/images/skills/shadcn-ui.svg',
+    level: 'Básico' as const,
+    yearsOfExperience: 1,
   },
   {
     name: 'Next.js',
     icon: '/images/skills/nextjs.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 2,
+  },
+  {
+    name: 'Jest',
+    icon: '/images/skills/jest.svg',
     level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
@@ -47,16 +83,52 @@ const skills = [
     yearsOfExperience: 2,
   },
   {
+    name: 'Node.js',
+    icon: '/images/skills/nodejs.svg',
+    level: 'Intermedio' as const,
+    yearsOfExperience: 2,
+  },
+  {
     name: 'MongoDB',
     icon: '/images/skills/mongodb.svg',
     level: 'Intermedio' as const,
     yearsOfExperience: 1,
   },
   {
+    name: 'Git',
+    icon: '/images/skills/git.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'GitHub',
+    icon: '/images/skills/github.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
     name: 'AWS',
     icon: '/images/skills/aws.svg',
     level: 'Básico' as const,
     yearsOfExperience: 1,
+  },
+  {
+    name: 'Vercel',
+    icon: '/images/skills/vercel.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'ChatGPT',
+    icon: '/images/skills/chatgpt.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'Hostinger',
+    icon: '/images/skills/hostinger.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
   },
 ];
 

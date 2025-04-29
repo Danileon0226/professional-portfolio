@@ -17,6 +17,7 @@ import profile from '../../public/images/CV FOTO.jpg';
 import Navbar from '@/components/layout/Navbar';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import defaultProject from '../../public/images/default-proyect.jpg';
+import Afan from '../../public/images/proyects/afan.png';
 import { SkillCard } from '../components/ui/skill-card';
 import { Card, CardContent } from '../components/ui/card';
 import {
@@ -30,8 +31,32 @@ import Footer from '../components/layout/Footer';
 
 const skills = [
   {
+    name: 'HTML',
+    icon: '/images/skills/html-5.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'CSS',
+    icon: '/images/skills/css.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'JavaScript',
+    icon: '/images/skills/javascript.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
     name: 'React',
     icon: '/images/skills/react.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'Vite',
+    icon: '/images/skills/vitejs.svg',
     level: 'Avanzado' as const,
     yearsOfExperience: 3,
   },
@@ -42,14 +67,26 @@ const skills = [
     yearsOfExperience: 2,
   },
   {
-    name: 'Node.js',
-    icon: '/images/skills/nodejs.svg',
-    level: 'Intermedio' as const,
-    yearsOfExperience: 2,
+    name: 'Material UI',
+    icon: '/images/skills/material-ui.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'Shadcn UI',
+    icon: '/images/skills/shadcn-ui.svg',
+    level: 'Básico' as const,
+    yearsOfExperience: 1,
   },
   {
     name: 'Next.js',
     icon: '/images/skills/nextjs.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 2,
+  },
+  {
+    name: 'Jest',
+    icon: '/images/skills/jest.svg',
     level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
@@ -66,16 +103,52 @@ const skills = [
     yearsOfExperience: 2,
   },
   {
+    name: 'Node.js',
+    icon: '/images/skills/nodejs.svg',
+    level: 'Intermedio' as const,
+    yearsOfExperience: 2,
+  },
+  {
     name: 'MongoDB',
     icon: '/images/skills/mongodb.svg',
     level: 'Intermedio' as const,
     yearsOfExperience: 1,
   },
   {
+    name: 'Git',
+    icon: '/images/skills/git.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'GitHub',
+    icon: '/images/skills/github.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
     name: 'AWS',
     icon: '/images/skills/aws.svg',
     level: 'Básico' as const,
     yearsOfExperience: 1,
+  },
+  {
+    name: 'Vercel',
+    icon: '/images/skills/vercel.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'ChatGPT',
+    icon: '/images/skills/chatgpt.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
+  },
+  {
+    name: 'Hostinger',
+    icon: '/images/skills/hostinger.svg',
+    level: 'Avanzado' as const,
+    yearsOfExperience: 3,
   },
 ];
 
@@ -105,13 +178,12 @@ const experiences = [
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description:
-      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
+    title: 'AFAN',
+    description: 'Afan existe para devolverle la paz y el control a quienes viven en arriendo. ',
     tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    image: defaultProject,
+    image: Afan,
     github: 'https://github.com/yourusername/ecommerce',
-    demo: 'https://ecommerce-demo.com',
+    demo: 'https://afan.com.co/',
   },
   {
     title: 'E-commerce Platform',
@@ -519,21 +591,21 @@ const Home = () => {
               dragFree: true,
               duration: 25,
             }}
-            className="w-full max-w-3xl mx-auto px-6 sm:px-0"
+            className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-0"
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4"
+                  className="basis-full md:basis-1/2 lg:basis-1/3 flex justify-center items-stretch px-0 md:px-2"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                   >
-                    <Card className="relative">
-                      <CardContent className="p-4 sm:p-6">
+                    <Card className="relative h-full flex flex-col justify-between min-h-[260px] max-w-md mx-auto">
+                      <CardContent className="p-4 sm:p-6 flex flex-col h-full justify-between">
                         <div className="mb-4 sm:mb-6">
                           <motion.div
                             initial={{ scale: 0 }}
