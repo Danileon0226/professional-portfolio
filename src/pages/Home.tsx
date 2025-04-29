@@ -152,9 +152,10 @@ const projects = [
 
 const testimonials = [
   {
-    name: 'Ana García',
-    position: 'CEO, TechStart',
-    content: 'Un desarrollador excepcional con gran atención al detalle.',
+    name: 'Juan Sebastian Restrepo Nieto',
+    position: 'Frontend Developer, Crystal S.A.S',
+    content:
+      'Durante el tiempo como aprendiz en Crystal SAS se vio un crecimiento profesional y personal exponencial. También se evidenció una gran pasión por las tecnologías, algo supremamente importante hoy en día en un mundo tan cambiante. ',
     avatar: profile,
   },
   {
@@ -238,20 +239,26 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button
+              asChild
               className="hover-scale shadow-custom px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
               variant="default"
               size="lg"
             >
-              <Mail className="mr-2 h-5 w-5" />
-              Contactar
+              <a href="mailto:danielalejandrosalgadoleon@gmail.com">
+                <Mail className="mr-2 h-5 w-5" />
+                Contactar
+              </a>
             </Button>
             <Button
+              asChild
               className="hover-scale shadow-custom px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
               variant="outline"
               size="lg"
             >
-              Ver Proyectos
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="/projects">
+                Ver Proyectos
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </motion.div>
         </motion.div>
@@ -278,13 +285,17 @@ const Home = () => {
                     Con más de 4 años de experiencia en el desarrollo web moderno.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-                    <Button variant="outline" className="gap-2 w-full sm:w-auto">
-                      <User className="w-4 h-4" />
-                      Ver CV Completo
+                    <Button asChild variant="outline" className="gap-2 w-full sm:w-auto">
+                      <a href="/cv">
+                        <User className="w-4 h-4" />
+                        Ver CV Completo
+                      </a>
                     </Button>
-                    <Button variant="default" className="gap-2 w-full sm:w-auto">
-                      <Download className="w-4 h-4" />
-                      Descargar CV
+                    <Button asChild variant="default" className="gap-2 w-full sm:w-auto">
+                      <a href="/cv.pdf" download>
+                        <Download className="w-4 h-4" />
+                        Descargar CV
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -600,12 +611,15 @@ const Home = () => {
                   className="w-full sm:w-auto"
                 >
                   <Button
+                    asChild
                     className="hover-scale shadow-custom w-full sm:w-auto"
                     variant="default"
                     size="lg"
                   >
-                    <Mail className="mr-2 h-5 w-5" />
-                    Enviar Mensaje
+                    <a href="mailto:danielalejandrosalgadoleon@gmail.com">
+                      <Mail className="mr-2 h-5 w-5" />
+                      Enviar Mensaje
+                    </a>
                   </Button>
                 </motion.div>
                 <motion.div
@@ -614,12 +628,15 @@ const Home = () => {
                   className="w-full sm:w-auto"
                 >
                   <Button
+                    asChild
                     className="hover-scale shadow-custom w-full sm:w-auto"
                     variant="outline"
                     size="lg"
                   >
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Agendar Reunión
+                    <a href="#agendar-reunion">
+                      <Calendar className="mr-2 h-5 w-5" />
+                      Agendar Reunión
+                    </a>
                   </Button>
                 </motion.div>
               </div>

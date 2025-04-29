@@ -8,7 +8,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { label: 'PROYECTOS', href: '/projects' },
+  { label: 'INICIO', href: '/' },
+    { label: 'PROYECTOS', href: '/projects' },
   { label: 'SOBRE MÍ', href: '/about' },
 ];
 
@@ -60,7 +61,7 @@ const Navbar = () => {
               width={110}
               height={110}
               loading="lazy"
-              className="max-h-12 w-auto sm:max-h-14 transition-all duration-300"
+              className="max-h-14 w-auto sm:max-h-16 transition-all duration-300"
             />
           </Link>
         </motion.div>
@@ -161,9 +162,9 @@ const Navbar = () => {
                   <img
                     src={logo}
                     alt="Logo de Daniel-Zero"
-                    width={90}
-                    height={90}
-                    className="max-h-10 w-auto"
+                    width={110}
+                    height={110}
+                    className="max-h-16 w-auto"
                   />
                 </Link>
                 <button

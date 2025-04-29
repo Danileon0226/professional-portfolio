@@ -1,110 +1,108 @@
-import { motion } from "framer-motion";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import profile from "../../public/images/CV FOTO.jpg";
-import { Card, CardContent } from "../components/ui/card";
-import { SkillCard } from "../components/ui/skill-card";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Mail, Download, User, Calendar } from "lucide-react";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
+import { motion } from 'framer-motion';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import profile from '../../public/images/CV FOTO.jpg';
+import { Card, CardContent } from '../components/ui/card';
+import { SkillCard } from '../components/ui/skill-card';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Mail, Download, User, Calendar } from 'lucide-react';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 const skills = [
   {
-    name: "React",
-    icon: "/images/skills/react.svg",
-    level: "Avanzado" as const,
+    name: 'React',
+    icon: '/images/skills/react.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 3,
   },
   {
-    name: "TypeScript",
-    icon: "/images/skills/typescript.svg",
-    level: "Avanzado" as const,
+    name: 'TypeScript',
+    icon: '/images/skills/typescript.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "Node.js",
-    icon: "/images/skills/nodejs.svg",
-    level: "Intermedio" as const,
+    name: 'Node.js',
+    icon: '/images/skills/nodejs.svg',
+    level: 'Intermedio' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "Next.js",
-    icon: "/images/skills/nextjs.svg",
-    level: "Avanzado" as const,
+    name: 'Next.js',
+    icon: '/images/skills/nextjs.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "Tailwind CSS",
-    icon: "/images/skills/tailwind.svg",
-    level: "Avanzado" as const,
+    name: 'Tailwind CSS',
+    icon: '/images/skills/tailwind.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "PostgreSQL",
-    icon: "/images/skills/postgresql.svg",
-    level: "Intermedio" as const,
+    name: 'PostgreSQL',
+    icon: '/images/skills/postgresql.svg',
+    level: 'Intermedio' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "MongoDB",
-    icon: "/images/skills/mongodb.svg",
-    level: "Intermedio" as const,
+    name: 'MongoDB',
+    icon: '/images/skills/mongodb.svg',
+    level: 'Intermedio' as const,
     yearsOfExperience: 1,
   },
   {
-    name: "AWS",
-    icon: "/images/skills/aws.svg",
-    level: "Básico" as const,
+    name: 'AWS',
+    icon: '/images/skills/aws.svg',
+    level: 'Básico' as const,
     yearsOfExperience: 1,
   },
 ];
 
 const experiences = [
   {
-    company: "Periferia It Group",
-    position: "Software Engineer Front",
-    period: "2024 - Presente",
-    description:
-      "Desarrollo de aplicaciones web modernas utilizando React y TypeScript.",
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    company: 'Periferia It Group',
+    position: 'Software Engineer Front',
+    period: '2024 - Presente',
+    description: 'Desarrollo de aplicaciones web modernas utilizando React y TypeScript.',
+    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
   },
   {
-    company: "TecnoTics",
-    position: "Full Stack Developer",
-    period: "2023 - 2024",
-    description: "Desarrollo full stack de aplicaciones web y móviles.",
-    technologies: ["Node.js", "React Native", "PostgreSQL", "AWS"],
+    company: 'TecnoTics',
+    position: 'Full Stack Developer',
+    period: '2023 - 2024',
+    description: 'Desarrollo full stack de aplicaciones web y móviles.',
+    technologies: ['Node.js', 'React Native', 'PostgreSQL', 'AWS'],
   },
   {
-    company: "Crystal S.A.S",
-    position: "Desarrollador Web",
-    period: "2022 - 2023",
-    description: "Desarrollo full stack de aplicaciones web y móviles.",
-    technologies: ["Node.js", "React Native", ".NET", "AWS"],
+    company: 'Crystal S.A.S',
+    position: 'Desarrollador Web',
+    period: '2022 - 2023',
+    description: 'Desarrollo full stack de aplicaciones web y móviles.',
+    technologies: ['Node.js', 'React Native', '.NET', 'AWS'],
   },
 ];
 
 const values = [
   {
-    title: "Innovación",
-    description:
-      "Siempre busco soluciones creativas y actuales para cada reto tecnológico.",
+    title: 'Innovación',
+    description: 'Siempre busco soluciones creativas y actuales para cada reto tecnológico.',
   },
   {
-    title: "Colaboración",
+    title: 'Colaboración',
     description:
-      "Creo en el trabajo en equipo y la comunicación efectiva para lograr grandes resultados.",
+      'Creo en el trabajo en equipo y la comunicación efectiva para lograr grandes resultados.',
   },
   {
-    title: "Aprendizaje continuo",
+    title: 'Aprendizaje continuo',
     description:
-      "Me mantengo actualizado y en constante formación para ofrecer lo mejor a mis clientes y equipos.",
+      'Me mantengo actualizado y en constante formación para ofrecer lo mejor a mis clientes y equipos.',
   },
   {
-    title: "Calidad",
+    title: 'Calidad',
     description:
-      "Cuido cada detalle y aplico buenas prácticas para entregar productos robustos y escalables.",
+      'Cuido cada detalle y aplico buenas prácticas para entregar productos robustos y escalables.',
   },
 ];
 
@@ -130,40 +128,37 @@ const About = () => {
                   transition={{ duration: 0.7 }}
                   className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-primary/30"
                 >
-                  <img
-                    src={profile}
-                    alt="Foto de perfil"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={profile} alt="Foto de perfil" className="w-full h-full object-cover" />
                 </motion.div>
                 <div className="flex-1">
                   <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground dark:text-white">
                     Sobre Mí
                   </h1>
                   <p className="text-lg mb-4">
-                    ¡Hola! Soy Daniel-Zero, desarrollador Full Stack apasionado
-                    por la tecnología y la innovación. Me especializo en crear
-                    soluciones digitales modernas y escalables, con experiencia
-                    en React, TypeScript, Node.js y más. Disfruto trabajar en
-                    equipo, aprender nuevas tecnologías y enfrentar retos que me
+                    ¡Hola! Soy Daniel-Zero, desarrollador Full Stack apasionado por la tecnología y
+                    la innovación. Me especializo en crear soluciones digitales modernas y
+                    escalables, con experiencia en React, TypeScript, Node.js y más. Disfruto
+                    trabajar en equipo, aprender nuevas tecnologías y enfrentar retos que me
                     permitan crecer profesionalmente.
                   </p>
                   <div className="flex gap-4 flex-wrap mb-4">
-                    <Button variant="outline" className="gap-2">
-                      <User className="w-4 h-4" />
-                      Ver CV Completo
+                    <Button asChild variant="outline" className="gap-2">
+                      <a href="/cv">
+                        <User className="w-4 h-4" />
+                        Ver CV Completo
+                      </a>
                     </Button>
-                    <Button variant="default" className="gap-2">
-                      <Download className="w-4 h-4" />
-                      Descargar CV
+                    <Button asChild variant="default" className="gap-2">
+                      <a href="/cv.pdf" download>
+                        <Download className="w-4 h-4" />
+                        Descargar CV
+                      </a>
                     </Button>
                   </div>
                   <ul className="list-disc pl-5 text-muted-foreground mb-2">
                     <li>+4 años de experiencia en desarrollo web</li>
                     <li>Enfoque en frontend moderno y backend escalable</li>
-                    <li>
-                      Apasionado por la formación continua y la colaboración
-                    </li>
+                    <li>Apasionado por la formación continua y la colaboración</li>
                   </ul>
                 </div>
               </div>
@@ -192,12 +187,8 @@ const About = () => {
                 viewport={{ once: true }}
                 className="bg-card rounded-xl shadow-md p-6 border border-border/30"
               >
-                <h3 className="font-semibold text-xl mb-2 text-primary">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {value.description}
-                </p>
+                <h3 className="font-semibold text-xl mb-2 text-primary">{value.title}</h3>
+                <p className="text-muted-foreground text-sm">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -245,17 +236,11 @@ const About = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <Calendar className="w-5 h-5 text-primary" />
-                      <span className="text-sm text-muted-foreground">
-                        {exp.period}
-                      </span>
+                      <span className="text-sm text-muted-foreground">{exp.period}</span>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 text-foreground">
-                      {exp.position}
-                    </h3>
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">{exp.position}</h3>
                     <h4 className="text-lg text-primary mb-4">{exp.company}</h4>
-                    <p className="text-muted-foreground mb-4">
-                      {exp.description}
-                    </p>
+                    <p className="text-muted-foreground mb-4">{exp.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <Badge key={tech} variant="secondary">
@@ -284,8 +269,8 @@ const About = () => {
           <Card className="max-w-2xl mx-auto">
             <CardContent className="p-8">
               <p className="text-lg mb-8 text-center">
-                Estoy siempre abierto a nuevas oportunidades, colaboraciones y
-                proyectos interesantes. ¡No dudes en escribirme!
+                Estoy siempre abierto a nuevas oportunidades, colaboraciones y proyectos
+                interesantes. ¡No dudes en escribirme!
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <Button asChild variant="default" size="lg" className="flex-1">
