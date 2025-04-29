@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { Button } from '../components/ui/button';
+import { Badge } from '../components/ui/badge';
 import {
   Mail,
   Github,
@@ -12,169 +12,167 @@ import {
   Folder,
   Users,
   GitBranch,
-} from "lucide-react";
-import profile from "../../public/images/CV FOTO.jpg";
-import Navbar from "@/components/layout/Navbar";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
-import defaultProject from "../../public/images/default-proyect.jpg";
-import { SkillCard } from "../components/ui/skill-card";
-import { Card, CardContent } from "../components/ui/card";
+} from 'lucide-react';
+import profile from '../../public/images/CV FOTO.jpg';
+import Navbar from '@/components/layout/Navbar';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import defaultProject from '../../public/images/default-proyect.jpg';
+import { SkillCard } from '../components/ui/skill-card';
+import { Card, CardContent } from '../components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../components/ui/carousel";
-import Footer from "../components/layout/Footer";
+} from '../components/ui/carousel';
+import Footer from '../components/layout/Footer';
 
 const skills = [
   {
-    name: "React",
-    icon: "/images/skills/react.svg",
-    level: "Avanzado" as const,
+    name: 'React',
+    icon: '/images/skills/react.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 3,
   },
   {
-    name: "TypeScript",
-    icon: "/images/skills/typescript.svg",
-    level: "Avanzado" as const,
+    name: 'TypeScript',
+    icon: '/images/skills/typescript.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "Node.js",
-    icon: "/images/skills/nodejs.svg",
-    level: "Intermedio" as const,
+    name: 'Node.js',
+    icon: '/images/skills/nodejs.svg',
+    level: 'Intermedio' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "Next.js",
-    icon: "/images/skills/nextjs.svg",
-    level: "Avanzado" as const,
+    name: 'Next.js',
+    icon: '/images/skills/nextjs.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "Tailwind CSS",
-    icon: "/images/skills/tailwind.svg",
-    level: "Avanzado" as const,
+    name: 'Tailwind CSS',
+    icon: '/images/skills/tailwind.svg',
+    level: 'Avanzado' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "PostgreSQL",
-    icon: "/images/skills/postgresql.svg",
-    level: "Intermedio" as const,
+    name: 'PostgreSQL',
+    icon: '/images/skills/postgresql.svg',
+    level: 'Intermedio' as const,
     yearsOfExperience: 2,
   },
   {
-    name: "MongoDB",
-    icon: "/images/skills/mongodb.svg",
-    level: "Intermedio" as const,
+    name: 'MongoDB',
+    icon: '/images/skills/mongodb.svg',
+    level: 'Intermedio' as const,
     yearsOfExperience: 1,
   },
   {
-    name: "AWS",
-    icon: "/images/skills/aws.svg",
-    level: "Básico" as const,
+    name: 'AWS',
+    icon: '/images/skills/aws.svg',
+    level: 'Básico' as const,
     yearsOfExperience: 1,
   },
 ];
 
 const experiences = [
   {
-    company: "Periferia It Group",
-    position: "Software Engineer Front",
-    period: "2024 - Presente",
-    description:
-      "Desarrollo de aplicaciones web modernas utilizando React y TypeScript.",
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    company: 'Periferia It Group',
+    position: 'Software Engineer Front',
+    period: '2024 - Presente',
+    description: 'Desarrollo de aplicaciones web modernas utilizando React y TypeScript.',
+    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
   },
   {
-    company: "TecnoTics",
-    position: "Full Stack Developer",
-    period: "2023 - 2024",
-    description: "Desarrollo full stack de aplicaciones web y móviles.",
-    technologies: ["Node.js", "React Native", "PostgreSQL", "AWS"],
+    company: 'TecnoTics',
+    position: 'Full Stack Developer',
+    period: '2023 - 2024',
+    description: 'Desarrollo full stack de aplicaciones web y móviles.',
+    technologies: ['Node.js', 'React Native', 'PostgreSQL', 'AWS'],
   },
   {
-    company: "Crystal S.A.S",
-    position: "Desarrollador Web",
-    period: "2022 - 2023",
-    description: "Desarrollo full stack de aplicaciones web y móviles.",
-    technologies: ["Node.js", "React Native", ".NET", "AWS"],
+    company: 'Crystal S.A.S',
+    position: 'Desarrollador Web',
+    period: '2022 - 2023',
+    description: 'Desarrollo full stack de aplicaciones web y móviles.',
+    technologies: ['Node.js', 'React Native', '.NET', 'AWS'],
   },
 ];
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: 'E-commerce Platform',
     description:
-      "Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
     image: defaultProject,
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://ecommerce-demo.com",
+    github: 'https://github.com/yourusername/ecommerce',
+    demo: 'https://ecommerce-demo.com',
   },
   {
-    title: "E-commerce Platform",
+    title: 'E-commerce Platform',
     description:
-      "Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
     image: defaultProject,
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://ecommerce-demo.com",
+    github: 'https://github.com/yourusername/ecommerce',
+    demo: 'https://ecommerce-demo.com',
   },
   {
-    title: "E-commerce Platform",
+    title: 'E-commerce Platform',
     description:
-      "Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
     image: defaultProject,
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://ecommerce-demo.com",
+    github: 'https://github.com/yourusername/ecommerce',
+    demo: 'https://ecommerce-demo.com',
   },
   {
-    title: "CRM System",
+    title: 'CRM System',
     description:
-      "Sistema de gestión de relaciones con clientes con análisis en tiempo real y automatización de procesos.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
+      'Sistema de gestión de relaciones con clientes con análisis en tiempo real y automatización de procesos.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
     image: defaultProject,
-    github: "https://github.com/yourusername/crm",
-    demo: "https://crm-demo.com",
+    github: 'https://github.com/yourusername/crm',
+    demo: 'https://crm-demo.com',
   },
   {
-    title: "Portfolio Website",
-    description:
-      "Sitio web personal moderno construido con las últimas tecnologías web.",
-    tech: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+    title: 'Portfolio Website',
+    description: 'Sitio web personal moderno construido con las últimas tecnologías web.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
     image: defaultProject,
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://portfolio-demo.com",
+    github: 'https://github.com/yourusername/portfolio',
+    demo: 'https://portfolio-demo.com',
   },
 ];
 
 const testimonials = [
   {
-    name: "Ana García",
-    position: "CEO, TechStart",
-    content: "Un desarrollador excepcional con gran atención al detalle.",
+    name: 'Ana García',
+    position: 'CEO, TechStart',
+    content: 'Un desarrollador excepcional con gran atención al detalle.',
     avatar: profile,
   },
   {
-    name: "Carlos Ruiz",
-    position: "CTO, InnovaSoft",
-    content: "Excelente capacidad para resolver problemas complejos.",
+    name: 'Carlos Ruiz',
+    position: 'CTO, InnovaSoft',
+    content: 'Excelente capacidad para resolver problemas complejos.',
     avatar: profile,
   },
   {
-    name: "Carlos Ruiz",
-    position: "CTO, InnovaSoft",
-    content: "Excelente capacidad para resolver problemas complejos.",
+    name: 'Carlos Ruiz',
+    position: 'CTO, InnovaSoft',
+    content: 'Excelente capacidad para resolver problemas complejos.',
     avatar: profile,
   },
   {
-    name: "Carlos Ruiz",
-    position: "CTO, InnovaSoft",
-    content: "Excelente capacidad para resolver problemas complejos.",
+    name: 'Carlos Ruiz',
+    position: 'CTO, InnovaSoft',
+    content: 'Excelente capacidad para resolver problemas complejos.',
     avatar: profile,
   },
 ];
@@ -182,22 +180,22 @@ const testimonials = [
 const stats = [
   {
     value: 4,
-    label: "Años de Experiencia",
+    label: 'Años de Experiencia',
     icon: Calendar,
   },
   {
     value: 50,
-    label: "Proyectos Completados",
+    label: 'Proyectos Completados',
     icon: Folder,
   },
   {
     value: 20,
-    label: "Clientes Satisfechos",
+    label: 'Clientes Satisfechos',
     icon: Users,
   },
   {
     value: 100,
-    label: "Commits por Semana",
+    label: 'Commits por Semana',
     icon: GitBranch,
   },
 ];
@@ -230,8 +228,8 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Creando experiencias digitales excepcionales a través del código.
-            Especializado en desarrollo web moderno y soluciones escalables.
+            Creando experiencias digitales excepcionales a través del código. Especializado en
+            desarrollo web moderno y soluciones escalables.
           </motion.p>
           <motion.div
             className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4 w-full max-w-xs sm:max-w-none mx-auto"
@@ -272,30 +270,19 @@ const Home = () => {
             <CardContent className="p-4 sm:p-8">
               <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center justify-center">
                 <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden">
-                  <img
-                    src={profile}
-                    alt="Profile"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={profile} alt="Profile" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 w-full">
                   <p className="text-base sm:text-lg mb-4">
-                    Desarrollador Full Stack apasionado por crear soluciones
-                    digitales innovadoras. Con más de 4 años de experiencia en
-                    el desarrollo web moderno.
+                    Desarrollador Full Stack apasionado por crear soluciones digitales innovadoras.
+                    Con más de 4 años de experiencia en el desarrollo web moderno.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-                    <Button
-                      variant="outline"
-                      className="gap-2 w-full sm:w-auto"
-                    >
+                    <Button variant="outline" className="gap-2 w-full sm:w-auto">
                       <User className="w-4 h-4" />
                       Ver CV Completo
                     </Button>
-                    <Button
-                      variant="default"
-                      className="gap-2 w-full sm:w-auto"
-                    >
+                    <Button variant="default" className="gap-2 w-full sm:w-auto">
                       <Download className="w-4 h-4" />
                       Descargar CV
                     </Button>
@@ -342,7 +329,7 @@ const Home = () => {
                   transition={{
                     duration: 0.5,
                     delay: index * 0.1,
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 100,
                   }}
                   viewport={{ once: true }}
@@ -366,9 +353,7 @@ const Home = () => {
                       {stat.value}+
                     </motion.span>
                   </motion.h3>
-                  <p className="text-muted-foreground text-sm sm:text-base">
-                    {stat.label}
-                  </p>
+                  <p className="text-muted-foreground text-sm sm:text-base">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -392,16 +377,10 @@ const Home = () => {
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span className="text-xs sm:text-sm text-muted-foreground">
-                      {exp.period}
-                    </span>
+                    <span className="text-xs sm:text-sm text-muted-foreground">{exp.period}</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
-                    {exp.position}
-                  </h3>
-                  <h4 className="text-base sm:text-lg text-primary mb-2 sm:mb-4">
-                    {exp.company}
-                  </h4>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{exp.position}</h3>
+                  <h4 className="text-base sm:text-lg text-primary mb-2 sm:mb-4">{exp.company}</h4>
                   <p className="text-muted-foreground text-sm sm:text-base mb-2 sm:mb-4">
                     {exp.description}
                   </p>
@@ -431,17 +410,14 @@ const Home = () => {
 
           <Carousel
             opts={{
-              align: "start",
+              align: 'start',
               loop: true,
             }}
             className="w-full max-w-6xl mx-auto px-2 sm:px-4"
           >
             <CarouselContent>
               {projects.map((project, index) => (
-                <CarouselItem
-                  key={project.title}
-                  className="basis-full md:basis-1/2 lg:basis-1/3"
-                >
+                <CarouselItem key={project.title} className="basis-full md:basis-1/2 lg:basis-1/3">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -454,7 +430,7 @@ const Home = () => {
                         alt={project.title}
                         className="object-cover w-full h-full max-w-full"
                         onError={(e) => {
-                          e.currentTarget.src = "/default-project.jpg";
+                          e.currentTarget.src = '/default-project.jpg';
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/30 to-transparent dark:from-black/95 dark:via-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -481,12 +457,7 @@ const Home = () => {
                         {project.description}
                       </p>
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                        <Button
-                          variant="default"
-                          size="sm"
-                          asChild
-                          className="flex-1"
-                        >
+                        <Button variant="default" size="sm" asChild className="flex-1">
                           <a
                             href={project.demo}
                             target="_blank"
@@ -497,12 +468,7 @@ const Home = () => {
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
                         </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          asChild
-                          className="flex-1"
-                        >
+                        <Button variant="outline" size="sm" asChild className="flex-1">
                           <a
                             href={project.github}
                             target="_blank"
@@ -536,7 +502,7 @@ const Home = () => {
           </h2>
           <Carousel
             opts={{
-              align: "center",
+              align: 'center',
               loop: true,
               skipSnaps: false,
               dragFree: true,
@@ -562,7 +528,7 @@ const Home = () => {
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
                             transition={{
-                              type: "spring",
+                              type: 'spring',
                               stiffness: 260,
                               damping: 20,
                               delay: 0.1 + index * 0.1,
@@ -595,9 +561,7 @@ const Home = () => {
                             delay: 0.4 + index * 0.1,
                           }}
                         >
-                          <h4 className="font-semibold text-sm sm:text-base">
-                            {testimonial.name}
-                          </h4>
+                          <h4 className="font-semibold text-sm sm:text-base">{testimonial.name}</h4>
                           <p className="text-xs sm:text-sm text-muted-foreground">
                             {testimonial.position}
                           </p>
@@ -626,8 +590,8 @@ const Home = () => {
           <Card className="max-w-2xl mx-auto">
             <CardContent className="p-4 sm:p-8">
               <p className="text-base sm:text-lg mb-6 sm:mb-8">
-                Estoy siempre interesado en nuevos proyectos y oportunidades de
-                colaboración. ¡No dudes en contactarme!
+                Estoy siempre interesado en nuevos proyectos y oportunidades de colaboración. ¡No
+                dudes en contactarme!
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 w-full">
                 <motion.div

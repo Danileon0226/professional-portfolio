@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "../ui/button";
-import { ThemeToggle } from "../ui/theme-toggle";
-import { useTheme } from "../../hooks/use-theme";
-import logo from "../../../public/images/logo.png";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '../ui/button';
+import { ThemeToggle } from '../ui/theme-toggle';
+import { useTheme } from '../../hooks/use-theme';
+import logo from '../../../public/images/logo.png';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { label: "PROYECTOS", href: "/projects" },
-  { label: "SOBRE MÍ", href: "/about" },
+  { label: 'PROYECTOS', href: '/projects' },
+  { label: 'SOBRE MÍ', href: '/about' },
 ];
 
 const Navbar = () => {
@@ -19,19 +19,19 @@ const Navbar = () => {
 
   useEffect(() => {
     if (menuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     };
   }, [menuOpen]);
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
-    if (href.startsWith("#")) {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith('#')) {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -41,7 +41,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mb-8 ${
-        theme === "dark" ? "border-gray-800" : "border-gray-200"
+        theme === 'dark' ? 'border-gray-800' : 'border-gray-200'
       }`}
       role="navigation"
       aria-label="Navegación principal"
@@ -74,13 +74,11 @@ const Navbar = () => {
               whileTap={{ scale: 0.96 }}
               className="relative"
             >
-              {item.href.startsWith("/") ? (
+              {item.href.startsWith('/') ? (
                 <Link
                   to={item.href}
                   className={`text-sm font-semibold tracking-wide transition-colors px-2 py-1 focus:outline-none focus-visible:ring-2 rounded hover:text-primary ${
-                    location.pathname === item.href
-                      ? "text-primary"
-                      : "text-foreground/70"
+                    location.pathname === item.href ? 'text-primary' : 'text-foreground/70'
                   }`}
                 >
                   {item.label}
@@ -106,7 +104,7 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         <button
           className="md:hidden p-2 rounded focus:outline-none focus-visible:ring-2"
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -150,10 +148,10 @@ const Navbar = () => {
             />
             {/* Menú hamburguesa */}
             <motion.div
-              initial={{ x: "100%" }}
+              initial={{ x: '100%' }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               className="fixed inset-0 z-50 bg-white dark:bg-neutral-900 flex flex-col md:hidden h-screen overflow-y-auto"
               role="dialog"
               aria-modal="true"
@@ -178,14 +176,14 @@ const Navbar = () => {
               </div>
               <nav className="flex flex-col gap-6 px-8 py-8">
                 {navItems.map((item) =>
-                  item.href.startsWith("/") ? (
+                  item.href.startsWith('/') ? (
                     <Link
                       key={item.label}
                       to={item.href}
                       className={`text-lg font-semibold tracking-wide transition-colors px-2 py-2 rounded focus:outline-none focus-visible:ring-2 ${
                         location.pathname === item.href
-                          ? "text-primary bg-primary/10"
-                          : "text-foreground/80 hover:bg-accent"
+                          ? 'text-primary bg-primary/10'
+                          : 'text-foreground/80 hover:bg-accent'
                       }`}
                       onClick={() => setMenuOpen(false)}
                     >
@@ -199,17 +197,13 @@ const Navbar = () => {
                     >
                       {item.label}
                     </button>
-                  )
+                  ),
                 )}
                 <Button
                   className="mt-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
                   asChild
                 >
-                  <Link
-                    to="/contact"
-                    aria-label="Ir a contacto"
-                    onClick={() => setMenuOpen(false)}
-                  >
+                  <Link to="/contact" aria-label="Ir a contacto" onClick={() => setMenuOpen(false)}>
                     <span>CONTACTO</span>
                     <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
                       <path
