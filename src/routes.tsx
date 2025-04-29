@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
+import CV from "./components/layout/CV";
+
+declare module "html2pdf.js";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +18,10 @@ export const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/cv",
+    element: <CV />,
   },
 ]);
 
