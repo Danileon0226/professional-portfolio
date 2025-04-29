@@ -413,7 +413,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-16 sm:mb-24 relative"
+          className="mb-16 sm:mb-24 relative overflow-x-hidden"
         >
           <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-16 text-center text-foreground dark:text-white">
             Proyectos Destacados
@@ -424,7 +424,7 @@ const Home = () => {
               align: 'start',
               loop: true,
             }}
-            className="w-full max-w-6xl mx-auto px-2 sm:px-4"
+            className="w-full max-w-6xl mx-auto px-6 sm:px-4"
           >
             <CarouselContent>
               {projects.map((project, index) => (
@@ -496,8 +496,8 @@ const Home = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="!left-2 !w-8 !h-8 sm:!left-4 sm:!w-10 sm:!h-10 z-10" />
+            <CarouselNext className="!right-2 !w-8 !h-8 sm:!right-4 sm:!w-10 sm:!h-10 z-10" />
           </Carousel>
         </motion.section>
 
@@ -506,7 +506,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-16 sm:mb-24"
+          className="mb-16 sm:mb-24 overflow-x-hidden"
         >
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
             Testimonios
@@ -519,7 +519,7 @@ const Home = () => {
               dragFree: true,
               duration: 25,
             }}
-            className="w-full max-w-5xl mx-auto px-2 sm:px-0"
+            className="w-full max-w-3xl mx-auto px-6 sm:px-0"
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
@@ -583,8 +583,8 @@ const Home = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="!left-2 !w-8 !h-8 sm:!left-4 sm:!w-10 sm:!h-10 z-10" />
+            <CarouselNext className="!right-2 !w-8 !h-8 sm:!right-4 sm:!w-10 sm:!h-10 z-10" />
           </Carousel>
         </motion.section>
 
