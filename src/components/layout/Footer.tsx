@@ -1,14 +1,19 @@
-import { useTheme } from "../../hooks/use-theme";
-import logo from "../../../public/images/logo.png";
+import { useTheme } from '../../hooks/use-theme';
+
+import logolight from '../../../public/images/ZEROLIGHT.png';
+import logodark from '../../../public/images/ZERODARK.png';
 
 const Footer = () => {
   const { theme } = useTheme();
   const year = new Date().getFullYear();
 
+  // Selección dinámica del logo según el tema
+  const logo = theme === 'dark' ? logodark : logolight;
+
   return (
     <footer
       className={`w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 mt-8 ${
-        theme === "dark" ? "border-gray-800" : "border-gray-200"
+        theme === 'dark' ? 'border-gray-800' : 'border-gray-200'
       }`}
     >
       <div className="container flex flex-col md:flex-row items-center justify-between py-6 gap-4">
@@ -22,22 +27,14 @@ const Footer = () => {
             loading="lazy"
             className="rounded-md shadow-sm"
           />
-          <span className="font-semibold text-lg text-foreground">
-            Daniel-Zero
-          </span>
+          <span className="font-semibold text-lg text-foreground">Daniel-Zero</span>
         </div>
         {/* Enlaces rápidos */}
         <nav className="flex gap-6 text-sm text-muted-foreground">
-          <a
-            href="/projects"
-            className="hover:text-foreground transition-colors"
-          >
+          <a href="/projects" className="hover:text-foreground transition-colors">
             Proyectos
           </a>
-          <a
-            href="#experience"
-            className="hover:text-foreground transition-colors"
-          >
+          <a href="#experience" className="hover:text-foreground transition-colors">
             Experiencia
           </a>
           <a href="#blog" className="hover:text-foreground transition-colors">
