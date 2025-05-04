@@ -8,6 +8,7 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Mail, Download, User, Calendar } from 'lucide-react';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import ParticlesBg from '../components/ui/ParticlesBg';
 
 const skills = [
   {
@@ -180,7 +181,8 @@ const values = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ParticlesBg quantity={50} opacity={0.4} zIndex="0" />
       <Navbar />
       <Breadcrumbs />
       <main className="container mx-auto px-4 sm:px-6 py-16">

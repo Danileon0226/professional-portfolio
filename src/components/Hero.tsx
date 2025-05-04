@@ -11,7 +11,6 @@ import { useTheme } from '../hooks/use-theme';
 const Hero = () => {
   const { theme } = useTheme();
   const [init, setInit] = useState(false);
-  const [showName, setShowName] = useState(true);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {

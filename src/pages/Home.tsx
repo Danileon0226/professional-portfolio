@@ -3,34 +3,15 @@ import { motion } from 'framer-motion';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 // @ts-ignore
 import { loadSlim } from '@tsparticles/slim';
-import { useEffect, useState, useCallback } from 'react';
 
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import {
-  Mail,
-  Github,
-  ArrowRight,
-  Calendar,
-  Download,
-  User,
-  Folder,
-  Users,
-  GitBranch,
-} from 'lucide-react';
+import { Mail, Github, ArrowRight, Calendar, Download, User } from 'lucide-react';
 import profile from '../../public/images/CV FOTO.jpg';
 import Navbar from '@/components/layout/Navbar';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import Hero from '../components/Hero';
-
-//imagenes proyectos
-import Afan from '../../public/images/proyects/afan.png';
-import Terminal from '../../public/images/proyects/terminalsur.png';
-import Tecnotics from '../../public/images/proyects/tecnotics.png';
-import AppsforTheWorld from '../../public/images/proyects/appsfortheworld.png';
-import HemoGroup from '../../public/images/proyects/hemogroup.png';
-import Construredes from '../../public/images/proyects/construredes.png';
-import Vlips from '../../public/images/proyects/vlips.png';
+import ParticlesBg from '../components/ui/ParticlesBg';
 
 //componentes
 import { SkillCard } from '../components/ui/skill-card';
@@ -44,27 +25,14 @@ import {
 } from '../components/ui/carousel';
 import Footer from '../components/layout/Footer';
 import { skills, experiences, projects, testimonials, stats } from './homeData';
-import { useTheme } from '@/hooks/use-theme';
 
 const Home = () => {
-  const { theme } = useTheme();
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesLoaded = useCallback(async () => {}, []);
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ParticlesBg quantity={70} opacity={0.5} zIndex="0" />
       <Navbar />
       <Breadcrumbs />
-      <Hero />  
+      <Hero />
       <main className="container mx-auto px-2 sm:px-4 md:px-6 py-10 sm:py-16">
         {/* About Section */}
         <motion.section

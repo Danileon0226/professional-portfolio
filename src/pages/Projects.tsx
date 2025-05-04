@@ -1,20 +1,15 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card";
-import { Github, ExternalLink } from "lucide-react";
-import Navbar from "@/components/layout/Navbar";
-import Breadcrumbs from "@/components/layout/Breadcrumbs";
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Github, ExternalLink } from 'lucide-react';
+import Navbar from '@/components/layout/Navbar';
+import Breadcrumbs from '@/components/layout/Breadcrumbs';
+import ParticlesBg from '../components/ui/ParticlesBg';
 
 // Tipos de proyectos
-type ProjectCategory = "Todos" | "Web" | "Mobile" | "Desktop" | "API";
+type ProjectCategory = 'Todos' | 'Web' | 'Mobile' | 'Desktop' | 'API';
 type TechStack = string;
 
 interface Project {
@@ -32,76 +27,66 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-commerce Platform",
+    title: 'E-commerce Platform',
     description:
-      "Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.",
+      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
     longDescription:
-      "Una plataforma completa de comercio electrónico que incluye gestión de inventario, sistema de pagos, panel de administración, análisis de ventas y más. Desarrollada con las últimas tecnologías y mejores prácticas.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    image: "/images/default-proyect.jpg",
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://ecommerce-demo.com",
-    category: "Web",
+      'Una plataforma completa de comercio electrónico que incluye gestión de inventario, sistema de pagos, panel de administración, análisis de ventas y más. Desarrollada con las últimas tecnologías y mejores prácticas.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    image: '/images/default-proyect.jpg',
+    github: 'https://github.com/yourusername/ecommerce',
+    demo: 'https://ecommerce-demo.com',
+    category: 'Web',
     featured: true,
-    date: "2024",
+    date: '2024',
   },
   {
-    title: "CRM System",
+    title: 'CRM System',
     description:
-      "Sistema de gestión de relaciones con clientes con análisis en tiempo real y automatización de procesos.",
+      'Sistema de gestión de relaciones con clientes con análisis en tiempo real y automatización de procesos.',
     longDescription:
-      "CRM empresarial con funciones avanzadas de seguimiento de clientes, automatización de marketing, análisis de datos y generación de informes personalizados.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    image: "/images/default-proyect.jpg",
-    github: "https://github.com/yourusername/crm",
-    demo: "https://crm-demo.com",
-    category: "Web",
+      'CRM empresarial con funciones avanzadas de seguimiento de clientes, automatización de marketing, análisis de datos y generación de informes personalizados.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+    image: '/images/default-proyect.jpg',
+    github: 'https://github.com/yourusername/crm',
+    demo: 'https://crm-demo.com',
+    category: 'Web',
     featured: true,
-    date: "2023",
+    date: '2023',
   },
   {
-    title: "Mobile Fitness App",
+    title: 'Mobile Fitness App',
     description:
-      "Aplicación móvil para seguimiento de ejercicios y nutrición con planes personalizados.",
+      'Aplicación móvil para seguimiento de ejercicios y nutrición con planes personalizados.',
     longDescription:
-      "Aplicación fitness completa con seguimiento de rutinas, planes de nutrición, integración con dispositivos wearables y comunidad social.",
-    tech: ["React Native", "Firebase", "Redux", "Node.js"],
-    image: "/images/default-proyect.jpg",
-    github: "https://github.com/yourusername/fitness-app",
-    demo: "https://fitness-demo.com",
-    category: "Mobile",
-    date: "2023",
+      'Aplicación fitness completa con seguimiento de rutinas, planes de nutrición, integración con dispositivos wearables y comunidad social.',
+    tech: ['React Native', 'Firebase', 'Redux', 'Node.js'],
+    image: '/images/default-proyect.jpg',
+    github: 'https://github.com/yourusername/fitness-app',
+    demo: 'https://fitness-demo.com',
+    category: 'Mobile',
+    date: '2023',
   },
 ];
 
-const allTechnologies = Array.from(
-  new Set(projects.flatMap((project) => project.tech))
-).sort();
+const allTechnologies = Array.from(new Set(projects.flatMap((project) => project.tech))).sort();
 
-const categories: ProjectCategory[] = [
-  "Todos",
-  "Web",
-  "Mobile",
-  "Desktop",
-  "API",
-];
+const categories: ProjectCategory[] = ['Todos', 'Web', 'Mobile', 'Desktop', 'API'];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] =
-    useState<ProjectCategory>("Todos");
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('Todos');
   const [selectedTech, setSelectedTech] = useState<TechStack[]>([]);
 
   const filteredProjects = projects.filter((project) => {
-    const matchesCategory =
-      selectedCategory === "Todos" || project.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'Todos' || project.category === selectedCategory;
     const matchesTech =
-      selectedTech.length === 0 ||
-      selectedTech.every((tech) => project.tech.includes(tech));
+      selectedTech.length === 0 || selectedTech.every((tech) => project.tech.includes(tech));
     return matchesCategory && matchesTech;
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ParticlesBg quantity={40} opacity={0.35} zIndex="0" />
       <Navbar />
       <Breadcrumbs />
 
@@ -113,12 +98,10 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold mb-4 text-foreground">
-            Mis Proyectos
-          </h1>
+          <h1 className="text-4xl font-bold mb-4 text-foreground">Mis Proyectos</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explora mi portafolio de proyectos, desde aplicaciones web hasta
-            soluciones móviles y APIs.
+            Explora mi portafolio de proyectos, desde aplicaciones web hasta soluciones móviles y
+            APIs.
           </p>
         </motion.div>
 
@@ -129,7 +112,7 @@ export default function Projects() {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
+                variant={selectedCategory === category ? 'default' : 'outline'}
                 onClick={() => setSelectedCategory(category)}
                 className="transition-all"
               >
@@ -143,13 +126,11 @@ export default function Projects() {
             {allTechnologies.map((tech) => (
               <Badge
                 key={tech}
-                variant={selectedTech.includes(tech) ? "default" : "secondary"}
+                variant={selectedTech.includes(tech) ? 'default' : 'secondary'}
                 className="cursor-pointer hover:opacity-80"
                 onClick={() => {
                   setSelectedTech((prev) =>
-                    prev.includes(tech)
-                      ? prev.filter((t) => t !== tech)
-                      : [...prev, tech]
+                    prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech],
                   );
                 }}
               >
@@ -191,9 +172,7 @@ export default function Projects() {
                     <CardTitle className="text-xl">{project.title}</CardTitle>
                     <Badge variant="outline">{project.date}</Badge>
                   </div>
-                  <CardDescription className="line-clamp-2">
-                    {project.description}
-                  </CardDescription>
+                  <CardDescription className="line-clamp-2">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -204,9 +183,7 @@ export default function Projects() {
                     ))}
                   </div>
                   {project.longDescription && (
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {project.longDescription}
-                    </p>
+                    <p className="text-sm text-muted-foreground mb-4">{project.longDescription}</p>
                   )}
                   <div className="flex gap-3 mt-auto">
                     <Button variant="default" className="flex-1" asChild>
