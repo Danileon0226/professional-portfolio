@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/button';
 import { ThemeToggle } from '../ui/theme-toggle';
 import { useTheme } from '../../hooks/use-theme';
-import logo from '../../../public/images/ZERO.png';
+
+import logolight from '../../../public/images/ZEROLIGHT.png';
+import logodark from '../../../public/images/ZERODARK.png';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
@@ -17,6 +19,9 @@ const Navbar = () => {
   const { theme } = useTheme();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Selección dinámica del logo según el tema
+  const logo = theme === 'dark' ? logodark : logolight;
 
   useEffect(() => {
     if (menuOpen) {
@@ -58,10 +63,10 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo de Daniel-Zero, desarrollador web"
-              width={130}
-              height={130}
+              width={90}
+              height={90}
               loading="lazy"
-              className="max-h-40 w-auto sm:max-h-20 transition-all duration-300"
+              className="max-h-16 w-auto transition-all duration-300"
             />
           </Link>
         </motion.div>
@@ -162,9 +167,9 @@ const Navbar = () => {
                   <img
                     src={logo}
                     alt="Logo de Daniel-Zero"
-                    width={110}
-                    height={110}
-                    className="max-h-16 w-auto"
+                    width={70}
+                    height={70}
+                    className="max-h-12 w-auto"
                   />
                 </Link>
                 <button
