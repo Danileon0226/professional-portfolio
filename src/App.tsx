@@ -1,14 +1,15 @@
-import { RouterProvider } from "react-router-dom";
-import router from "./routes";
-import { ThemeProvider } from "./hooks/use-theme";
-import { useEffect } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import { RouterProvider } from 'react-router-dom';
+import router from './routes';
+import { ThemeProvider } from './hooks/use-theme';
+import { useEffect } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import './components/ui/HackerMode.css';
 
 // Componente para inicializar el tema
 function ThemeInitializer() {
   useEffect(() => {
     // Asegurarse de que el tema inicial se aplique inmediatamente
-    const theme = localStorage.getItem("portfolio-theme") || "dark";
+    const theme = localStorage.getItem('portfolio-theme') || 'dark';
     document.documentElement.classList.add(theme);
   }, []);
   return null;
@@ -29,6 +30,7 @@ function App() {
       >
         <FaWhatsapp size={32} />
       </a>
+      {/* El botón y el modo hacker ahora están en el layout global */}
     </ThemeProvider>
   );
 }

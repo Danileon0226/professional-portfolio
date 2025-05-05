@@ -1,0 +1,365 @@
+.hacker-mode-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Animación de entrada */
+}
+
+@keyframes hacker-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-hacker-fade-in {
+  animation: hacker-fade-in 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hacker-terminal {
+  width: 90vw;
+  max-width: 800px;
+  height: 70vh;
+  background: #111;
+  color: #39ff14;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  border-radius: 8px;
+  box-shadow: 0 0 40px #39ff14aa;
+  padding: 24px 16px 16px 16px;
+  overflow-y: auto;
+  margin-bottom: 24px;
+  border: 2px solid #39ff14;
+  transition: box-shadow 0.3s;
+}
+
+.hacker-terminal:focus-within {
+  box-shadow: 0 0 60px #39ff14cc;
+}
+
+.hacker-line {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.3s;
+  margin-bottom: 2px;
+}
+
+.hacker-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.hacker-prompt {
+  color: #39ff14;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.hacker-input {
+  background: transparent;
+  border: none;
+  color: #39ff14;
+  font-family: inherit;
+  font-size: 1em;
+  outline: none;
+  width: 80%;
+  caret-color: #39ff14;
+  animation: blink-caret 1s step-end infinite;
+}
+
+.hacker-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hacker-exit-btn {
+  background: #222;
+  color: #39ff14;
+  border: 1px solid #39ff14;
+  border-radius: 4px;
+  padding: 8px 24px;
+  font-family: inherit;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.hacker-exit-btn:hover:enabled {
+  background: #39ff14;
+  color: #111;
+}
+.hacker-exit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-right: 2px solid #39ff14;
+  }
+  50% {
+    border-right: 2px solid transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hacker-banner-glow {
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14, 0 0 32px #39ff14;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 2px;
+  animation: glow-fade-in 0.7s;
+}
+
+@keyframes glow-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.matrix-effect {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+.matrix-line {
+  color: #39ff14;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
+  opacity: 0.85;
+  animation: matrix-fade 1.2s linear;
+  white-space: pre;
+}
+@keyframes matrix-fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+.cmd-mode-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cmd-terminal {
+  width: 90vw;
+  max-width: 800px;
+  height: 70vh;
+  background: #181818;
+  color: #cfcfcf;
+  font-family: 'Consolas', 'Fira Mono', 'monospace';
+  border-radius: 8px 8px 6px 6px;
+  box-shadow: 0 0 40px #000a, 0 0 0 2px #222;
+  border: 2px solid #222;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cmd-title-bar {
+  background: linear-gradient(90deg, #222 80%, #444 100%);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid #333;
+  user-select: none;
+  position: relative;
+}
+.cmd-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+.cmd-title {
+  font-size: 1em;
+  color: #e0e0e0;
+  flex: 1;
+  font-family: 'Consolas', monospace;
+  letter-spacing: 0.5px;
+}
+.cmd-title-btns {
+  display: flex;
+  gap: 6px;
+}
+.cmd-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-left: 2px;
+  cursor: pointer;
+  border: 1px solid #444;
+}
+.cmd-min {
+  background: #e2c700;
+}
+.cmd-max {
+  background: #00b800;
+}
+.cmd-close {
+  background: #e23c3c;
+}
+.cmd-close:hover {
+  filter: brightness(1.2);
+}
+
+.cmd-content-area {
+  flex: 1;
+  padding: 18px 18px 10px 18px;
+  overflow-y: auto;
+  background: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cmd-line {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  font-size: 1em;
+  color: #cfcfcf;
+  margin-bottom: 2px;
+}
+
+.cmd-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.cmd-prompt {
+  color: #00ff00;
+  margin-right: 8px;
+  font-weight: bold;
+  font-family: 'Consolas', monospace;
+  font-size: 1em;
+}
+
+.cmd-input {
+  background: transparent;
+  border: none;
+  color: #cfcfcf;
+  font-family: inherit;
+  font-size: 1em;
+  outline: none;
+  width: 80%;
+  caret-color: #00ff00;
+  animation: blink-caret-cmd 1s step-end infinite;
+}
+
+@keyframes blink-caret-cmd {
+  0%,
+  100% {
+    border-right: 2px solid #00ff00;
+  }
+  50% {
+    border-right: 2px solid transparent;
+  }
+}
+
+.cmd-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hacker-banner-glow {
+  color: #00ff00;
+  text-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00, 0 0 32px #00ff00;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 2px;
+  animation: glow-fade-in 0.7s;
+}
+
+@keyframes glow-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.matrix-effect {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+.matrix-line {
+  color: #00ff00;
+  font-family: 'Consolas', 'Fira Mono', monospace;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+  opacity: 0.85;
+  animation: matrix-fade 1.2s linear;
+  white-space: pre;
+}
+@keyframes matrix-fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
