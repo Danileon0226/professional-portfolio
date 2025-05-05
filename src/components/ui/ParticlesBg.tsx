@@ -5,13 +5,10 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
 interface ParticlesBgProps {
-  quantity?: number;
-  opacity?: number;
-  zIndex?: string;
   style?: React.CSSProperties;
 }
 
-const ParticlesBg = ({ quantity = 60, opacity = 0.7, zIndex = '-1', style }: ParticlesBgProps) => {
+const ParticlesBg = ({ style }: ParticlesBgProps) => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -32,7 +29,7 @@ const ParticlesBg = ({ quantity = 60, opacity = 0.7, zIndex = '-1', style }: Par
         width: '100%',
         height: '100vh',
         pointerEvents: 'none',
-        zIndex,
+        zIndex: -100,
         ...style,
       }}
     >
@@ -43,88 +40,72 @@ const ParticlesBg = ({ quantity = 60, opacity = 0.7, zIndex = '-1', style }: Par
           options={{
             fullScreen: { enable: true },
             background: { color: { value: 'transparent' } },
-            fpsLimit: 120,
+            fpsLimit: 90,
             particles: {
-              number: { value: quantity, density: { enable: true } },
+              number: { value: 80, density: { enable: true } },
               color: {
-                value: [
-                  '#00fff7',
-                  '#a21caf',
-                  '#38bdf8',
-                  '#fff',
-                  '#7c3aed',
-                  '#00ffae',
-                  '#ff00ea',
-                  '#ffe600',
-                ],
+                value: '#39FF14',
                 animation: {
                   enable: true,
-                  speed: 60,
-                  sync: false,
+                  speed: 0.5,
                 },
               },
-              shape: { type: ['circle', 'hexagon', 'triangle'] },
+              shape: { type: ['polygon', 'triangle'] },
               opacity: {
-                value: opacity,
-                animation: { enable: true, speed: 1.2, sync: false },
+                value: 0.25,
+                animation: { enable: true, speed: 0.3, sync: true },
               },
               size: {
-                value: { min: 2, max: 7 },
-                animation: { enable: true, speed: 2, sync: false },
+                value: { min: 1, max: 7 },
+                animation: { enable: true, speed: 0.5, sync: true },
               },
               links: {
                 enable: true,
-                color: '#fff',
-                distance: 120,
-                opacity: 0.18,
-                width: 1.1,
-                triangles: { enable: true, color: '#00fff7', opacity: 0.07 },
+                color: '#39FF14',
+                distance: 200,
+                opacity: 0.11,
+                width: 0.6,
+                triangles: { enable: true, color: '#39FF14', opacity: 0.09 },
               },
               move: {
                 enable: true,
-                speed: { min: 0.5, max: 1.5 },
+                speed: { min: 0.15, max: 0.45 },
                 direction: 'none',
-                random: true,
+                random: false,
                 straight: false,
                 outModes: { default: 'out' },
-                attract: { enable: true },
-                path: {
-                  enable: true,
-                  options: {
-                    noise: {
-                      enable: true,
-                      delay: { min: 0, max: 0.5 },
-                      factor: { min: 1, max: 2 },
-                    },
-                  },
-                },
+                attract: { enable: false },
+                path: { enable: false },
               },
               twinkle: {
                 particles: {
                   enable: true,
-                  frequency: 0.12,
-                  opacity: 1,
+                  frequency: 0.04,
+                  opacity: 0.5,
                   color: '#fff',
                 },
                 lines: {
-                  enable: true,
-                  frequency: 0.04,
-                  opacity: 0.7,
-                  color: '#00fff7',
+                  enable: false,
                 },
               },
               shadow: {
                 enable: true,
-                color: '#00fff7',
-                blur: 4,
+                color: '#39FF14',
+                blur: 16,
                 offset: { x: 0, y: 0 },
               },
             },
             detectRetina: true,
             interactivity: {
               events: {
-                onHover: { enable: false },
+                onHover: { enable: true, mode: ['grab'] },
                 onClick: { enable: false },
+              },
+              modes: {
+                grab: {
+                  distance: 160,
+                  links: { opacity: 0.18 },
+                },
               },
             },
           }}
