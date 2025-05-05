@@ -1,4 +1,4 @@
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -68,11 +68,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
   /* Asegurarse de que el tema oscuro se aplique correctamente */
-  :root[class~="dark"] {
+  :root[class~='dark'] {
     color-scheme: dark;
   }
 
@@ -258,7 +258,7 @@
 }
 
 .gradient-border::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -276,21 +276,17 @@
 
 /* Sombras personalizadas */
 .shadow-custom {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .dark .shadow-custom {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .shadow-custom-hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .dark .shadow-custom-hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
-    0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }

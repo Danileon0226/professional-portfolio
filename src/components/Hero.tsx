@@ -7,6 +7,8 @@ import { loadSlim } from '@tsparticles/slim';
 // @ts-ignore
 import { loadTextShape } from '@tsparticles/shape-text';
 import { useTheme } from '../hooks/use-theme';
+import { Button } from './ui/button';
+import { Mail, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -166,12 +168,33 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="flex gap-4 justify-center"
           >
-            <a href="mailto:danielalejandrosalgadoleon@gmail.com" className="btn-primary">
-              Contactar
-            </a>
-            <a href="/projects" className="btn-secondary">
-              Ver Proyectos
-            </a>
+            <Button
+              asChild
+              variant="default"
+              size="lg"
+              className="gap-2 px-6 py-3 shadow-lg hover:scale-105 transition-transform bg-gradient-to-r from-fuchsia-600 via-blue-500 to-cyan-400 text-white border-0"
+            >
+              <a href="mailto:danielalejandrosalgadoleon@gmail.com">
+                <Mail className="w-5 h-5 mr-2" />
+                Contactar
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="secondary"
+              size="lg"
+              className={`gap-2 px-6 py-3 shadow-lg hover:scale-105 transition-transform border-2 border-cyan-400 
+                ${
+                  theme === 'dark'
+                    ? 'bg-black/80 text-cyan-300 hover:bg-black/90'
+                    : 'bg-white text-blue-600 hover:bg-blue-50'
+                }`}
+            >
+              <a href="/projects">
+                Ver Proyectos
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
           </motion.div>
         </motion.div>
       </div>
