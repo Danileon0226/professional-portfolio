@@ -30,7 +30,7 @@ const ParticlesBg = ({ quantity = 60, opacity = 0.7, zIndex = '-1', style }: Par
         position: 'absolute',
         inset: 0,
         width: '100%',
-        height: '100%',
+        height: '100vh',
         pointerEvents: 'none',
         zIndex,
         ...style,
@@ -41,9 +41,9 @@ const ParticlesBg = ({ quantity = 60, opacity = 0.7, zIndex = '-1', style }: Par
           id="tsparticles-bg"
           particlesLoaded={particlesLoaded}
           options={{
-            fullScreen: { enable: false },
+            fullScreen: { enable: true },
             background: { color: { value: 'transparent' } },
-            fpsLimit: 60,
+            fpsLimit: 120,
             particles: {
               number: { value: quantity, density: { enable: true } },
               color: {

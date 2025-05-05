@@ -116,7 +116,6 @@ const QUOTES = [
 export const InspirationWidget: React.FC = () => {
   const [quote, setQuote] = useState(QUOTES[0]);
   const [fade, setFade] = useState(true);
-  const { theme } = useTheme();
 
   useEffect(() => {
     setQuote(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
@@ -131,76 +130,33 @@ export const InspirationWidget: React.FC = () => {
       }
       setQuote(newQuote);
       setFade(true);
-    }, 250);
+    }, 200);
   };
 
-  // Gradiente animado según tema
-  const gradient =
-    theme === 'dark'
-      ? 'bg-gradient-to-br from-[#232526] via-[#414345] to-[#232526]'
-      : 'bg-gradient-to-br from-[#f8fafc] via-[#e0e7ef] to-[#f8fafc]';
-
   return (
-    <div
-      className={`relative w-full max-w-xl mx-auto my-8 p-8 rounded-3xl shadow-2xl border-2 border-primary/30 ${gradient} overflow-hidden`}
-    >
-      <div className="absolute inset-0 pointer-events-none animate-gradient-move opacity-30 z-0" />
-      <div className="flex flex-col items-center justify-center gap-4 relative z-10">
-        <Sparkles className="w-10 h-10 text-primary animate-bounce drop-shadow-lg" />
-        <blockquote
-          className={`relative z-10 text-2xl md:text-3xl font-semibold text-center select-none drop-shadow-lg transition-opacity duration-700 ${
-            fade ? 'opacity-100 animate-fade-in' : 'opacity-0'
-          } ${theme === 'dark' ? 'text-gray-100' : 'text-gray-800'}`}
-        >
-          “{quote.text}”
-        </blockquote>
-        <span
-          className={`block text-base md:text-lg text-primary font-bold mb-2 animate-fade-in-slow`}
-        >
-          — {quote.author}
-        </span>
-        <button
-          onClick={handleNewQuote}
-          className={`mt-4 px-6 py-2 rounded-full font-bold shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-md border flex items-center gap-2 bg-primary text-primary-foreground border-primary/40 dark:bg-primary dark:text-primary-foreground dark:border-primary/40 animate-bounce-once`}
-        >
-          <Sparkles className="w-5 h-5 animate-spin-slow" />
+    <div className="w-full max-w-xl mx-auto my-12 flex flex-col items-center justify-center p-0 bg-transparent">
+      <Sparkles className="w-8 h-8 text-primary mb-4" />
+      <blockquote
+        className={`text-xl md:text-2xl font-medium text-center select-none transition-opacity duration-500 ${
+          fade ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{ maxWidth: 600 }}
+      >
+        “{quote.text}”
+      </blockquote>
+      <span className="block text-base md:text-lg text-primary font-semibold mb-4 mt-2">
+        — {quote.author}
+      </span>
+      <button
+        onClick={handleNewQuote}
+        className="text-primary text-sm underline underline-offset-4 font-medium bg-transparent border-none p-0 m- transition-colors"
+        style={{ boxShadow: 'none', border: 'none' }}
+      >
+        <span className="inline-flex items-center gap-1">
+          <Sparkles className="w-4 h-4" />
           Nueva inspiración
-        </button>
-      </div>
-      <style>{`
-        @keyframes gradient-move {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .animate-gradient-move {
-          background-size: 200% 200%;
-          animation: gradient-move 8s ease-in-out infinite;
-        }
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.7s;
-        }
-        @keyframes fade-in-slow {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fade-in-slow {
-          animation: fade-in-slow 1.2s;
-        }
-        @keyframes bounce-once {
-          0% { transform: scale(1); }
-          30% { transform: scale(1.12); }
-          60% { transform: scale(0.97); }
-          100% { transform: scale(1); }
-        }
-        .animate-bounce-once:active {
-          animation: bounce-once 0.4s;
-        }
-      `}</style>
+        </span>
+      </button>
     </div>
   );
 };

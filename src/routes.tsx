@@ -1,21 +1,53 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
-import CV from './components/layout/CV';
+import { Suspense, lazy } from 'react';
 import Layout from './components/layout/Layout';
+import Loader from './components/Loader';
 
 declare module 'html2pdf.js';
+
+// Migración a carga diferida (lazy loading)
+const Home = lazy(() => import('./pages/Home'));
+const Projects = lazy(() => import('./pages/Projects'));
+const About = lazy(() => import('./pages/About'));
+const CV = lazy(() => import('./components/layout/CV'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
-      { path: '', element: <Home /> },
-      { path: 'projects', element: <Projects /> },
-      { path: 'about', element: <About /> },
-      { path: 'cv', element: <CV /> },
+      {
+        path: '',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'projects',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Projects />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'about',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'cv',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <CV />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
