@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useTheme } from '../../hooks/use-theme';
 import { Sparkles } from 'lucide-react';
 
 const QUOTES = [
