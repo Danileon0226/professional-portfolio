@@ -229,21 +229,17 @@ export const testimonials = [
     avatar: profile,
   },
   {
-    name: 'Carlos Ruiz',
-    position: 'CTO, InnovaSoft',
-    content: 'Excelente capacidad para resolver problemas complejos.',
+    name: 'Karen Torres Archbold',
+    position: 'Frontend Developer, Periferia IT Group',
+    content:
+      'Es un gran desarrollador, siempre está dispuesto a aprender y ayudar a los demás. Tiene una gran capacidad para resolver problemas y es muy proactivo.',
     avatar: profile,
   },
   {
-    name: 'Carlos Ruiz',
-    position: 'CTO, InnovaSoft',
-    content: 'Excelente capacidad para resolver problemas complejos.',
-    avatar: profile,
-  },
-  {
-    name: 'Carlos Ruiz',
-    position: 'CTO, InnovaSoft',
-    content: 'Excelente capacidad para resolver problemas complejos.',
+    name: 'Cristian Camilo Arango',
+    position: 'Frontend Developer, Periferia IT Group',
+    content:
+      'Es un gran desarrollador, siempre está dispuesto a aprender y ayudar a los demás. Tiene una gran capacidad para resolver problemas y es muy proactivo.',
     avatar: profile,
   },
 ];

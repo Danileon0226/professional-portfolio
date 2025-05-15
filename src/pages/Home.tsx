@@ -1,12 +1,8 @@
 import { motion } from 'framer-motion';
-// @ts-ignore
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-// @ts-ignore
-import { loadSlim } from '@tsparticles/slim';
 
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { Mail, Github, ArrowRight, Calendar, Download, User } from 'lucide-react';
+import { Mail, ArrowRight, Calendar, Download, User } from 'lucide-react';
 import profile from '../../public/images/CV FOTO.jpg';
 import Hero from '../components/Hero';
 import InspirationWidget from '../components/ui/InspirationWidget';
@@ -38,7 +34,7 @@ const Home = () => {
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
           Sobre Mí
         </h2>
-        <Card className="max-w-4xl mx-auto">
+        <Card className="max-w-4xl mx-auto backdrop-blur ">
           <CardContent className="p-4 sm:p-8">
             <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center justify-center">
               <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden">
@@ -81,7 +77,7 @@ const Home = () => {
         </h2>
         <div className="max-w-4xl mx-auto space-y-4 sm:space-y-8 px-2 sm:px-0">
           {experiences.map((exp, index) => (
-            <Card key={index} className="relative overflow-hidden bg-card">
+            <Card key={index} className="relative overflow-hidden  backdrop-blur  ">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
               <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4">
@@ -125,7 +121,7 @@ const Home = () => {
 
       {/* Stats Section */}
       <motion.section
-        className="mb-16 sm:mb-24 py-10 sm:py-16 bg-primary/5 dark:bg-primary/10 rounded-3xl"
+        className="mb-16 sm:mb-24 py-10 sm:py-16 bg-primary/5 dark:bg-primary/10 rounded-3xl backdrop-blur "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -193,7 +189,10 @@ const Home = () => {
         >
           <CarouselContent>
             {projects.map((project, index) => (
-              <CarouselItem key={project.title} className="basis-full md:basis-1/2 lg:basis-1/3">
+              <CarouselItem
+                key={project.title}
+                className="basis-full md:basis-1/2 lg:basis-1/3 backdrop-blur "
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -244,17 +243,6 @@ const Home = () => {
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </a>
                       </Button>
-                      <Button variant="outline" size="sm" asChild className="flex-1">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center"
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          Código
-                        </a>
-                      </Button>
                     </div>
                   </div>
                 </motion.div>
@@ -290,14 +278,14 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full md:basis-1/2 lg:basis-1/3 flex justify-center items-stretch px-0 md:px-2"
+                className="basis-full md:basis-1/2 lg:basis-1/3 flex justify-center items-stretch px-0 md:px-2 backdrop-blur "
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
-                  <Card className="relative h-full flex flex-col justify-between min-h-[260px] max-w-md mx-auto">
+                  <Card className="relative h-full flex flex-col justify-between min-h-[260px] max-w-lg mx-auto">
                     <CardContent className="p-4 sm:p-6 flex flex-col h-full justify-between">
                       <div className="mb-4 sm:mb-6">
                         <motion.div
@@ -363,7 +351,7 @@ const Home = () => {
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-foreground dark:text-white">
           ¿Listo para Colaborar?
         </h2>
-        <Card className="max-w-2xl mx-auto">
+        <Card className="max-w-2xl mx-auto backdrop-blur ">
           <CardContent className="p-4 sm:p-8">
             <p className="text-base sm:text-lg mb-6 sm:mb-8">
               Estoy siempre interesado en nuevos proyectos y oportunidades de colaboración. ¡No

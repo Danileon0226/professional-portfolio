@@ -238,7 +238,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="group h-full flex flex-col hover:shadow-lg transition-all duration-300">
+            <Card className="group h-full flex flex-col backdrop-blur  hover:shadow-lg transition-all duration-300">
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.image}

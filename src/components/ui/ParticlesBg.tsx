@@ -42,7 +42,7 @@ const ParticlesBg = ({ style }: ParticlesBgProps) => {
             background: { color: { value: 'transparent' } },
             fpsLimit: 120,
             particles: {
-              number: { value: 50, density: { enable: true } },
+              number: { value: 70, density: { enable: true } },
               color: {
                 value: '#39FF14',
                 animation: {

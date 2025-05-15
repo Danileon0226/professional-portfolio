@@ -133,7 +133,7 @@ export const InspirationWidget: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto my-12 flex flex-col items-center justify-center p-0 bg-transparent">
+    <div className="w-full max-w-xl mx-auto my-12 flex flex-col items-center justify-center p-0 bg-transparent backdrop-blur border">
       <Sparkles className="w-8 h-8 text-primary mb-4" />
       <blockquote
         className={`text-xl md:text-2xl font-medium text-center select-none transition-opacity duration-500 ${

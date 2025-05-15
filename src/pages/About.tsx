@@ -184,7 +184,7 @@ const About = () => {
         transition={{ duration: 0.8 }}
         className="mb-24"
       >
-        <Card className="max-w-4xl mx-auto shadow-xl border-0 bg-gradient-to-br from-background via-green-50/60 to-green-50/40 dark:from-background dark:via-green-900/30 dark:to-green-900/20">
+        <Card className="max-w-4xl mx-auto shadow-xl border bg-gradient-to-br backdrop-blur   from-background via-green-50/60 to-green-50/40 dark:from-background dark:via-green-900/30 dark:to-green-900/20">
           <CardContent className="p-8">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <motion.div
@@ -254,7 +254,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card rounded-xl shadow-md p-6 border border-border/30"
+              className="bg-card rounded-xl shadow-md p-6 border backdrop-blur  border-border/30"
             >
               <h3 className="font-semibold text-xl mb-2 text-primary">{value.title}</h3>
               <p className="text-muted-foreground text-sm">{value.description}</p>
@@ -301,7 +301,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="relative overflow-hidden border-l-4 border-primary">
+              <Card className="relative overflow-hidden border-l-4 border-primary backdrop-blur ">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
                     <Calendar className="w-5 h-5 text-primary" />
@@ -335,7 +335,7 @@ const About = () => {
         <h2 className="text-3xl font-bold mb-8 text-center text-foreground dark:text-white">
           ¿Te gustaría trabajar conmigo?
         </h2>
-        <Card className="max-w-2xl mx-auto">
+        <Card className="max-w-2xl mx-auto backdrop-blur border border-border/30 shadow-xl">
           <CardContent className="p-8">
             <p className="text-lg mb-8 text-center">
               Estoy siempre abierto a nuevas oportunidades, colaboraciones y proyectos interesantes.

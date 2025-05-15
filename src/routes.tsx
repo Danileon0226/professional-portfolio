@@ -10,6 +10,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
 const About = lazy(() => import('./pages/About'));
 const CV = lazy(() => import('./components/layout/CV'));
+const WorkStation = lazy(() => import('./pages/WorkStation'));
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'workstation',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <WorkStation />
           </Suspense>
         ),
       },
