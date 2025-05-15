@@ -3,7 +3,16 @@ import { useState } from 'react';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Github, ExternalLink } from 'lucide-react';
+import Afan from '../../public/images/proyects/afan.png';
+import Terminal from '../../public/images/proyects/terminalsur.png';
+import Tecnotics from '../../public/images/proyects/tecnotics.png';
+import AppsforTheWorld from '../../public/images/proyects/appsfortheworld.png';
+import HemoGroup from '../../public/images/proyects/hemogroup.png';
+import Construredes from '../../public/images/proyects/construredes.png';
+import Vlips from '../../public/images/proyects/vlips.png';
+import Rrg from '../../public/images/proyects/rrg.png';
+import VerdeOrigen from '../../public/images/proyects/verdeorigen.png';
+import { ExternalLink } from 'lucide-react';
 
 // Tipos de proyectos
 type ProjectCategory = 'Todos' | 'Web' | 'Mobile' | 'Desktop' | 'API';
@@ -15,7 +24,7 @@ interface Project {
   longDescription?: string;
   tech: string[];
   image: string;
-  github: string;
+
   demo: string;
   category: ProjectCategory;
   featured?: boolean;
@@ -24,45 +33,128 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'E-commerce Platform',
+    title: 'RRG System',
     description:
-      'Plataforma de comercio electrónico moderna y escalable con gestión de productos, carrito de compras y pagos integrados.',
+      'Sistema de registro, campañas y validación de códigos QR personalizado para campañas empresariales.',
     longDescription:
-      'Una plataforma completa de comercio electrónico que incluye gestión de inventario, sistema de pagos, panel de administración, análisis de ventas y más. Desarrollada con las últimas tecnologías y mejores prácticas.',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    image: '/images/default-proyect.jpg',
-    github: 'https://github.com/yourusername/ecommerce',
-    demo: 'https://ecommerce-demo.com',
+      'Plataforma administrativa robusta que permite el registro de usuarios, generación de campañas con códigos únicos, validación en tiempo real, estadísticas, CRUD avanzado y flujos personalizados. Integra formularios inteligentes, autenticación segura y paneles diferenciados por roles.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'MSAL'],
+    image: Rrg,
+
+    demo: 'https://terminaldelsur.com/login',
+    category: 'Web',
+    featured: true,
+    date: '2025',
+  },
+  {
+    title: 'Hemogroup App',
+    description: 'Sitio web institucional moderno para una empresa de tecnología médica.',
+    longDescription:
+      'Landing page profesional y optimizada para HemoGroup, con secciones animadas, diseño responsive, enfoque en SEO y visuales de alto impacto. Implementación de animaciones suaves, scroll dinámico y estilo sofisticado.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion'],
+    image: HemoGroup,
+
+    demo: 'https://hemogroup.netlify.app/',
+    category: 'Web',
+    featured: false,
+    date: '2024',
+  },
+  {
+    title: 'Tecnotics',
+    description:
+      'Landing page avanzada para una empresa de soluciones tecnológicas con enfoque comercial.',
+    longDescription:
+      'Desarrollo de una interfaz premium con diseño de lujo, secciones animadas, formularios integrados y estructura SEO optimizada. Uso de efectos modernos y experiencia fluida centrada en la conversión.',
+    tech: ['React', 'Tailwind CSS'],
+    image: Tecnotics,
+
+    demo: 'https://tecnotics.com/',
     category: 'Web',
     featured: true,
     date: '2024',
   },
   {
-    title: 'CRM System',
-    description:
-      'Sistema de gestión de relaciones con clientes con análisis en tiempo real y automatización de procesos.',
+    title: 'Apps for the World',
+    description: 'Plataforma de presentación de soluciones digitales a nivel global.',
     longDescription:
-      'CRM empresarial con funciones avanzadas de seguimiento de clientes, automatización de marketing, análisis de datos y generación de informes personalizados.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-    image: '/images/default-proyect.jpg',
-    github: 'https://github.com/yourusername/crm',
-    demo: 'https://crm-demo.com',
+      'Portfolio empresarial con enfoque internacional, diseño ultra moderno, múltiples secciones visuales, compatibilidad con dispositivos móviles, y una identidad de marca fuerte. Desarrollada con estándares altos de calidad visual.',
+    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+    image: AppsforTheWorld,
+
+    demo: 'https://appsfortheworld.com/',
     category: 'Web',
     featured: true,
-    date: '2023',
+    date: '2024',
   },
   {
-    title: 'Mobile Fitness App',
+    title: 'Construredes',
     description:
-      'Aplicación móvil para seguimiento de ejercicios y nutrición con planes personalizados.',
+      'Sitio institucional moderno para empresa de infraestructura y telecomunicaciones.',
     longDescription:
-      'Aplicación fitness completa con seguimiento de rutinas, planes de nutrición, integración con dispositivos wearables y comunidad social.',
-    tech: ['React Native', 'Firebase', 'Redux', 'Node.js'],
-    image: '/images/default-proyect.jpg',
-    github: 'https://github.com/yourusername/fitness-app',
-    demo: 'https://fitness-demo.com',
-    category: 'Mobile',
-    date: '2023',
+      'Landing elegante y profesional para Construredes, con paleta de colores sobria, tipografía técnica y animaciones de entrada. Optimizada para dispositivos móviles y cargado de forma ultra rápida.',
+    tech: ['React', 'Tailwind CSS'],
+    image: Construredes,
+
+    demo: 'https://construredes.netlify.app/',
+    category: 'Web',
+    featured: false,
+    date: '2024',
+  },
+  {
+    title: 'Vlips',
+    description:
+      'Sistema de gestión de videos y clips para una plataforma de entretenimiento digital.',
+    longDescription:
+      'Desarrollo de un sistema robusto para la gestión de videos, clips y contenido multimedia. Incluye funciones avanzadas de búsqueda, filtrado y categorización. Interfaz intuitiva y optimizada para el usuario.',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    image: Vlips,
+
+    demo: 'https://vlips.co/',
+    category: 'Web',
+    featured: false,
+    date: '2024',
+  },
+  {
+    title: 'AFAN',
+    description:
+      'Sistema de gestión de arrendamientos y propiedades con enfoque en la experiencia del usuario.',
+    longDescription:
+      'Desarrollo de una plataforma integral para la gestión de arrendamientos, propiedades y pagos. Incluye un panel administrativo, gestión de usuarios y un sistema de notificaciones. Interfaz amigable y optimizada para dispositivos móviles.',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    image: Afan,
+
+    demo: 'https://afan.com.co/',
+    category: 'Web',
+    featured: false,
+    date: '2025',
+  },
+  {
+    title: 'Terminal del Sur',
+    description:
+      'Sistema de gestión para una terminal de transporte con enfoque en la experiencia del usuario.',
+    longDescription:
+      'Desarrollo de un sistema integral para la gestión de terminales de transporte, incluyendo reservas, pagos y gestión de usuarios. Interfaz intuitiva y optimizada para dispositivos móviles.',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    image: Terminal,
+
+    demo: 'https://terminaldelsur.com/',
+    category: 'Web',
+    featured: false,
+    date: '2024',
+  },
+  {
+    title: 'Verde Origen',
+    description:
+      'Sistema de gestión de productos y servicios ecológicos con enfoque en la sostenibilidad.',
+    longDescription:
+      'Desarrollo de una plataforma para la gestión de productos ecológicos, incluyendo un sistema de reservas y pagos. Interfaz amigable y optimizada para dispositivos móviles.',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    image: VerdeOrigen,
+
+    demo: 'https://verdeorigen.online/buscador',
+    category: 'Web',
+    featured: false,
+    date: '2025',
   },
 ];
 
@@ -187,17 +279,6 @@ export default function Projects() {
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Demo
-                    </a>
-                  </Button>
-                  <Button variant="outline" className="flex-1" asChild>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Código
                     </a>
                   </Button>
                 </div>
