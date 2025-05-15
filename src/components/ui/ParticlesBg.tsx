@@ -40,9 +40,9 @@ const ParticlesBg = ({ style }: ParticlesBgProps) => {
           options={{
             fullScreen: { enable: true },
             background: { color: { value: 'transparent' } },
-            fpsLimit: 90,
+            fpsLimit: 120,
             particles: {
-              number: { value: 80, density: { enable: true } },
+              number: { value: 50, density: { enable: true } },
               color: {
                 value: '#39FF14',
                 animation: {

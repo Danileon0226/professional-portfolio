@@ -151,7 +151,7 @@ export const InspirationWidget: React.FC = () => {
         className="text-primary text-sm underline underline-offset-4 font-medium bg-transparent border-none p-0 m- transition-colors"
         style={{ boxShadow: 'none', border: 'none' }}
       >
-        <span className="inline-flex items-center gap-1">
+        <span className="inline-flex items-center gap-1 text-p ">
           <Sparkles className="w-4 h-4" />
           Nueva inspiración
         </span>

@@ -5,10 +5,8 @@ import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import './components/ui/HackerMode.css';
 
-// Componente para inicializar el tema
 function ThemeInitializer() {
   useEffect(() => {
-    // Asegurarse de que el tema inicial se aplique inmediatamente
     const theme = localStorage.getItem('portfolio-theme') || 'dark';
     document.documentElement.classList.add(theme);
   }, []);
@@ -20,17 +18,24 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
       <ThemeInitializer />
       <RouterProvider router={router} />
-      {/* Botón flotante de WhatsApp global */}
+
+      {/* Botón flotante de WhatsApp ultralujoso */}
       <a
         href="https://wa.me/573117502382?text=¡Hola!%20Vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte%20para%20un%20proyecto."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed z-50 bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors"
+        className="group fixed z-50 bottom-6 right-6 backdrop-blur-2xl bg-emerald-500/60 hover:bg-emerald-400/50 text-white rounded-full p-5 flex items-center justify-center shadow-[0_8px_30px_rgba(52,211,153,0.35)] border border-white/30 ring-2 ring-emerald-300/30 transition-all duration-300 ease-in-out hover:scale-110 animate-float"
         aria-label="Contactar por WhatsApp"
       >
-        <FaWhatsapp size={32} />
+        {/* Pulse interior */}
+        <span className="absolute animate-ping-slow h-full w-full rounded-full bg-emerald-300 opacity-20 group-hover:opacity-30" />
+
+        {/* Glow exterior */}
+        <span className="absolute -z-10 inset-0 rounded-full bg-emerald-400 opacity-10 blur-2xl group-hover:opacity-20 transition duration-300" />
+
+        {/* Icono */}
+        <FaWhatsapp size={30} className="relative drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
       </a>
-      {/* El botón y el modo hacker ahora están en el layout global */}
     </ThemeProvider>
   );
 }
