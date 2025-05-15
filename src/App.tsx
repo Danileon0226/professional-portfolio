@@ -4,6 +4,7 @@ import { ThemeProvider } from './hooks/use-theme';
 import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import './components/ui/HackerMode.css';
+import MouseFollower from './components/ui/MouseFollower';
 
 function ThemeInitializer() {
   useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
       <ThemeInitializer />
       <RouterProvider router={router} />
+      <MouseFollower />
 
       {/* Botón flotante de WhatsApp ultralujoso */}
       <a
