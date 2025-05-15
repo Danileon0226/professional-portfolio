@@ -13,6 +13,7 @@ const navItems = [
   { label: 'INICIO', href: '/' },
   { label: 'PROYECTOS', href: '/projects' },
   { label: 'SOBRE MÍ', href: '/about' },
+  { label: 'ESTACION DE TRABAJO', href: '/workstation' },
 ];
 
 const Navbar = () => {
