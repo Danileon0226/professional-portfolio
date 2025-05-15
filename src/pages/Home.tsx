@@ -69,6 +69,43 @@ const Home = () => {
         </Card>
       </motion.section>
 
+      {/* Experience Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16 sm:mb-24"
+      >
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
+          Experiencia Profesional
+        </h2>
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-8 px-2 sm:px-0">
+          {experiences.map((exp, index) => (
+            <Card key={index} className="relative overflow-hidden bg-card">
+              <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4">
+                  <Calendar className="w-5 h-5 text-primary" />
+                  <span className="text-xs sm:text-sm text-muted-foreground">{exp.period}</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{exp.position}</h3>
+                <h4 className="text-base sm:text-lg text-primary mb-2 sm:mb-4">{exp.company}</h4>
+                <p className="text-muted-foreground text-sm sm:text-base mb-2 sm:mb-4">
+                  {exp.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </motion.section>
+
       {/* Skills Section with new SkillCard component */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -133,43 +170,6 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </motion.section>
-
-      {/* Experience Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="mb-16 sm:mb-24"
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground dark:text-white">
-          Experiencia Profesional
-        </h2>
-        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-8 px-2 sm:px-0">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-              <CardContent className="p-4 sm:p-6">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  <span className="text-xs sm:text-sm text-muted-foreground">{exp.period}</span>
-                </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{exp.position}</h3>
-                <h4 className="text-base sm:text-lg text-primary mb-2 sm:mb-4">{exp.company}</h4>
-                <p className="text-muted-foreground text-sm sm:text-base mb-2 sm:mb-4">
-                  {exp.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </motion.section>
 

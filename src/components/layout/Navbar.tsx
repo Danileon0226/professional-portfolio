@@ -91,7 +91,7 @@ const Navbar = () => {
                   {location.pathname === item.href && (
                     <motion.span
                       layoutId="underline"
-                      className="absolute left-0 right-0 -bottom-1 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded"
+                      className="absolute left-0 right-0 -bottom-1 h-0.5 bg-gradient-to-r from-green-500 to-green-900 rounded"
                     />
                   )}
                 </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
           <Button
-            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
+            className="bg-gradient-to-r from-green-500 to-green-900 text-white hover:from-green-600 hover:to-green-950 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
             asChild
           >
             <Link to="/contact" aria-label="Ir a contacto">
@@ -206,7 +206,7 @@ const Navbar = () => {
                   ),
                 )}
                 <Button
-                  className="mt-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
+                  className="mt-6 bg-gradient-to-r from-green-500 to-green-900 text-white hover:from-green-600 hover:to-green-950 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
                   asChild
                 >
                   <Link to="/contact" aria-label="Ir a contacto" onClick={() => setMenuOpen(false)}>

@@ -184,7 +184,7 @@ const About = () => {
         transition={{ duration: 0.8 }}
         className="mb-24"
       >
-        <Card className="max-w-4xl mx-auto shadow-xl border-0 bg-gradient-to-br from-background via-purple-50/60 to-blue-50/40 dark:from-background dark:via-purple-900/30 dark:to-blue-900/20">
+        <Card className="max-w-4xl mx-auto shadow-xl border-0 bg-gradient-to-br from-background via-green-50/60 to-green-50/40 dark:from-background dark:via-green-900/30 dark:to-green-900/20">
           <CardContent className="p-8">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <motion.div
