@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/button';
 import { ThemeToggle } from '../ui/theme-toggle';
 import { useTheme } from '../../hooks/use-theme';
-
-import logolight from '../../../public/images/ZEROLIGHT.png';
-import logodark from '../../../public/images/ZERODARK.png';
+import { useLogo } from '../../hooks/use-logo';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
@@ -21,8 +19,7 @@ const Navbar = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Selección dinámica del logo según el tema
-  const logo = theme === 'dark' ? logodark : logolight;
+  const logo = useLogo();
 
   useEffect(() => {
     if (menuOpen) {

@@ -1,14 +1,11 @@
 import { useTheme } from '../../hooks/use-theme';
-
-import logolight from '../../../public/images/ZEROLIGHT.png';
-import logodark from '../../../public/images/ZERODARK.png';
+import { useLogo } from '../../hooks/use-logo';
 
 const Footer = () => {
   const { theme } = useTheme();
   const year = new Date().getFullYear();
 
-  // Selección dinámica del logo según el tema
-  const logo = theme === 'dark' ? logodark : logolight;
+  const logo = useLogo();
 
   return (
     <footer

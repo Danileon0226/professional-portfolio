@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './MouseFollower.css'; // Asegúrate de importar este CSS
+import './MouseFollower.css'; 
 
 const MouseFollower: React.FC = () => {
   const followerRef = useRef<HTMLDivElement>(null);
