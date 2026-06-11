@@ -9,9 +9,9 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'INICIO', href: '/' },
+  { label: 'SERVICIOS', href: '/#servicios' },
   { label: 'PROYECTOS', href: '/projects' },
-  { label: 'SOBRE MÍ', href: '/about' },
-  { label: 'ESTACIÓN', href: '/workstation' },
+  { label: 'NOSOTROS', href: '/about' },
 ];
 
 const Navbar = () => {
@@ -31,13 +31,6 @@ const Navbar = () => {
       document.body.style.overflow = '';
     };
   }, [menuOpen]);
-
-  const handleNavClick = (href: string) => {
-    setMenuOpen(false);
-    if (href.startsWith('#')) {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <motion.nav
@@ -60,7 +53,7 @@ const Navbar = () => {
           <Link to="/">
             <img
               src={logo}
-              alt="Logo de Daniel-Zero, desarrollador web"
+              alt="Logo de Zero Agency"
               width={90}
               height={90}
               loading="lazy"
@@ -78,7 +71,14 @@ const Navbar = () => {
               whileTap={{ scale: 0.96 }}
               className="relative"
             >
-              {item.href.startsWith('/') ? (
+              {item.href.includes('#') ? (
+                <a
+                  href={item.href}
+                  className="text-sm font-semibold tracking-wide transition-colors px-2 py-1 hover:text-primary text-foreground/70 focus:outline-none focus-visible:ring-2 rounded"
+                >
+                  {item.label}
+                </a>
+              ) : (
                 <Link
                   to={item.href}
                   className={`text-sm font-semibold tracking-wide transition-colors px-2 py-1 focus:outline-none focus-visible:ring-2 rounded hover:text-primary ${
@@ -89,17 +89,10 @@ const Navbar = () => {
                   {location.pathname === item.href && (
                     <motion.span
                       layoutId="underline"
-                      className="absolute left-0 right-0 -bottom-1 h-0.5 rounded bg-gradient-to-r from-primary to-emerald-400"
+                      className="absolute left-0 right-0 -bottom-1 h-0.5 rounded bg-gradient-to-r from-primary to-fuchsia-500"
                     />
                   )}
                 </Link>
-              ) : (
-                <button
-                  className="text-sm font-semibold tracking-wide transition-colors px-2 py-1 hover:text-primary text-foreground/70 focus:outline-none focus-visible:ring-2 rounded"
-                  onClick={() => handleNavClick(item.href)}
-                >
-                  {item.label}
-                </button>
               )}
             </motion.div>
           ))}
@@ -118,7 +111,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
           <Button
-            className="flex items-center gap-2 bg-gradient-to-r from-primary to-emerald-500 px-5 py-2 text-base font-bold text-primary-foreground shadow-glow transition-all hover:scale-[1.03]"
+            className="flex items-center gap-2 bg-gradient-to-r from-primary to-fuchsia-500 px-5 py-2 text-base font-bold text-primary-foreground shadow-glow transition-all hover:scale-[1.03]"
             asChild
           >
             <a href="/#contacto" aria-label="Ir a contacto">
@@ -164,7 +157,7 @@ const Navbar = () => {
                 <Link to="/" onClick={() => setMenuOpen(false)}>
                   <img
                     src={logo}
-                    alt="Logo de Daniel-Zero"
+                    alt="Logo de Zero Agency"
                     width={70}
                     height={70}
                     className="max-h-12 w-auto"
@@ -180,7 +173,16 @@ const Navbar = () => {
               </div>
               <nav className="flex flex-col gap-6 px-8 py-8">
                 {navItems.map((item) =>
-                  item.href.startsWith('/') ? (
+                  item.href.includes('#') ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="text-lg font-semibold tracking-wide transition-colors px-2 py-2 rounded text-foreground/80 hover:bg-accent focus:outline-none focus-visible:ring-2"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
                     <Link
                       key={item.label}
                       to={item.href}
@@ -193,18 +195,10 @@ const Navbar = () => {
                     >
                       {item.label}
                     </Link>
-                  ) : (
-                    <button
-                      key={item.label}
-                      className="text-lg font-semibold tracking-wide transition-colors px-2 py-2 rounded text-foreground/80 hover:bg-accent focus:outline-none focus-visible:ring-2"
-                      onClick={() => handleNavClick(item.href)}
-                    >
-                      {item.label}
-                    </button>
                   ),
                 )}
                 <Button
-                  className="mt-6 flex items-center gap-2 bg-gradient-to-r from-primary to-emerald-500 px-5 py-2 text-base font-bold text-primary-foreground shadow-glow"
+                  className="mt-6 flex items-center gap-2 bg-gradient-to-r from-primary to-fuchsia-500 px-5 py-2 text-base font-bold text-primary-foreground shadow-glow"
                   asChild
                 >
                   <a href="/#contacto" aria-label="Ir a contacto" onClick={() => setMenuOpen(false)}>

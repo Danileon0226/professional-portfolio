@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, ArrowUp } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useTheme } from '../../hooks/use-theme';
 import { useLogo } from '../../hooks/use-logo';
@@ -8,14 +8,14 @@ import { siteConfig, mailtoLink, whatsappLink } from '../../lib/site';
 const navLinks = [
   { label: 'Inicio', to: '/' },
   { label: 'Proyectos', to: '/projects' },
-  { label: 'Sobre mí', to: '/about' },
+  { label: 'Nosotros', to: '/about' },
   { label: 'Estación', to: '/workstation' },
-  { label: 'CV', to: '/cv' },
 ];
 
 const socials = [
-  { href: siteConfig.social.github, icon: Github, label: 'GitHub' },
+  { href: siteConfig.social.instagram, icon: Instagram, label: 'Instagram' },
   { href: siteConfig.social.linkedin, icon: Linkedin, label: 'LinkedIn' },
+  { href: siteConfig.social.github, icon: Github, label: 'GitHub' },
   { href: whatsappLink, icon: FaWhatsapp, label: 'WhatsApp' },
   { href: mailtoLink, icon: Mail, label: 'Email' },
 ];
@@ -38,17 +38,17 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-3">
               <img
                 src={logo}
-                alt="Logo de Daniel-Zero"
+                alt="Logo de Zero Agency"
                 width={48}
                 height={48}
                 loading="lazy"
                 className="h-12 w-auto"
               />
-              <span className="text-lg font-bold">Daniel León</span>
+              <span className="text-lg font-bold">Zero Agency</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Desarrollador Web Full Stack. Construyo productos digitales rápidos, accesibles y
-              memorables desde {siteConfig.location}.
+              Agencia de desarrollo de software y diseño web. Arquitectura digital de alto
+              rendimiento para toda {siteConfig.location}.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ const Footer = () => {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {year} Daniel León — Daniel-Zero. Todos los derechos reservados.
+            © {year} Zero Agency. Todos los derechos reservados.
           </p>
           <a
             href="#"

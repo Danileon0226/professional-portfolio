@@ -1,12 +1,12 @@
 {
-  "name": "Daniel León — Portafolio",
-  "short_name": "Daniel-Zero",
-  "description": "Portafolio profesional de Daniel León (Daniel-Zero), desarrollador web Full Stack.",
+  "name": "Zero Agency — Desarrollo de Software y Diseño Web",
+  "short_name": "Zero Agency",
+  "description": "Agencia de desarrollo de software y diseño web de alto rendimiento en Colombia.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0a1f14",
-  "theme_color": "#0a1f14",
+  "background_color": "#050409",
+  "theme_color": "#050409",
   "lang": "es",
   "icons": [
     {

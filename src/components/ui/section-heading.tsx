@@ -22,7 +22,7 @@ export function SectionHeading({ eyebrow, title, description, className = '' }: 
       {description && (
         <p className="mt-4 text-base text-muted-foreground sm:text-lg">{description}</p>
       )}
-      <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-primary to-emerald-400" />
+      <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-primary to-fuchsia-500" />
     </motion.div>
   );
 }

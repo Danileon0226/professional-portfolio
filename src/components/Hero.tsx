@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ArrowRight, Github, Linkedin, MapPin } from 'lucide-react';
+import { Mail, ArrowRight, Github, Linkedin, Instagram, MapPin } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { Button } from './ui/button';
 import { siteConfig, mailtoLink, whatsappLink } from '../lib/site';
 
 const ROLES = [
-  'Full Stack Developer',
-  'Especialista en React & Next.js',
-  'Frontend Engineer',
-  'Creador de experiencias web',
+  'Software a medida',
+  'Diseño web de alto rendimiento',
+  'Apps & E-commerce',
+  'Experiencias con GSAP',
 ];
 
 const Hero = () => {
@@ -26,8 +26,8 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
         <div className="absolute left-1/2 top-1/4 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] animate-aurora-drift" />
-        <div className="absolute right-[8%] top-[12%] h-72 w-72 rounded-full bg-emerald-400/20 blur-[100px] animate-aurora-drift" />
-        <div className="absolute bottom-0 left-[6%] h-72 w-72 rounded-full bg-teal-400/10 blur-[100px] animate-aurora-drift" />
+        <div className="absolute right-[8%] top-[12%] h-72 w-72 rounded-full bg-fuchsia-500/20 blur-[100px] animate-aurora-drift" />
+        <div className="absolute bottom-0 left-[6%] h-72 w-72 rounded-full bg-violet-500/10 blur-[100px] animate-aurora-drift" />
       </div>
 
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
@@ -42,7 +42,7 @@ const Hero = () => {
             <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-primary" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
-          Disponible para nuevos proyectos
+          Agencia digital · Disponible para nuevos proyectos
         </motion.div>
 
         {/* Titular */}
@@ -52,7 +52,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.05 }}
           className="mt-6 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl"
         >
-          Hola, soy <span className="text-gradient-brand">Daniel León</span>
+          Diseñamos y construimos{' '}
+          <span className="text-gradient-brand">software extraordinario</span>
         </motion.h1>
 
         {/* Rol rotativo */}
@@ -80,10 +81,11 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="mt-6 max-w-2xl text-balance text-base text-muted-foreground sm:text-lg"
         >
-          Construyo experiencias digitales excepcionales con código limpio y diseño impecable.
-          Especializado en <strong className="text-foreground">React</strong>,{' '}
+          En <strong className="text-foreground">Zero Agency</strong> creamos software a medida,
+          sitios web de alto rendimiento, apps y e-commerce. Con{' '}
+          <strong className="text-foreground">React</strong>,{' '}
           <strong className="text-foreground">Next.js</strong> y{' '}
-          <strong className="text-foreground">TypeScript</strong>, transformo ideas en productos
+          <strong className="text-foreground">TypeScript</strong> transformamos ideas en productos
           rápidos, accesibles y escalables.
         </motion.p>
 
@@ -127,8 +129,9 @@ const Hero = () => {
           className="mt-8 flex items-center gap-3"
         >
           {[
-            { href: siteConfig.social.github, icon: Github, label: 'GitHub' },
+            { href: siteConfig.social.instagram, icon: Instagram, label: 'Instagram' },
             { href: siteConfig.social.linkedin, icon: Linkedin, label: 'LinkedIn' },
+            { href: siteConfig.social.github, icon: Github, label: 'GitHub' },
             { href: whatsappLink, icon: FaWhatsapp, label: 'WhatsApp' },
           ].map(({ href, icon: Icon, label }) => (
             <a

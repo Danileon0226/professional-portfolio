@@ -48,7 +48,7 @@ export function SkillCard({ name, icon, level, yearsOfExperience }: SkillCardPro
             whileInView={{ width: `${pct}%` }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400"
+            className="h-full rounded-full bg-gradient-to-r from-primary to-fuchsia-500"
           />
         </div>
         <p className="text-right text-xs text-muted-foreground">

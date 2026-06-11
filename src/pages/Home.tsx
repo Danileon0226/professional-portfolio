@@ -19,16 +19,44 @@ import {
 } from '../components/ui/carousel';
 import { skills, experiences, projects, testimonials, stats } from './homeData';
 import profile from '../../public/images/CV FOTO.jpg';
-import { siteConfig, mailtoLink, whatsappLink } from '../lib/site';
+import { services, mailtoLink, whatsappLink } from '../lib/site';
 
 const Home = () => {
   return (
     <>
       <Hero />
 
-      {/* About */}
+      {/* Servicios */}
+      <section id="servicios" className="mb-24 scroll-mt-24 sm:mb-32">
+        <SectionHeading
+          eyebrow="Servicios"
+          title="Lo que hacemos"
+          description="Diseño y tecnología de punta a punta para llevar tu marca al siguiente nivel."
+        />
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, idx) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: idx * 0.06 }}
+              className="group relative overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:shadow-glow"
+            >
+              <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-primary/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3">
+                <service.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mb-2 text-lg font-semibold">{service.title}</h3>
+              <p className="text-sm text-muted-foreground">{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Nosotros */}
       <section id="sobre-mi" className="mb-24 scroll-mt-24 sm:mb-32">
-        <SectionHeading eyebrow="Sobre mí" title="Quién hay detrás del código" />
+        <SectionHeading eyebrow="Nosotros" title="La agencia detrás de tus ideas" />
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,32 +66,33 @@ const Home = () => {
           <Card className="mx-auto max-w-4xl overflow-hidden glass p-0">
             <CardContent className="flex flex-col items-center gap-8 p-6 sm:p-10 md:flex-row">
               <div className="relative shrink-0">
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary to-emerald-400 opacity-70 blur-md" />
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary to-fuchsia-500 opacity-70 blur-md" />
                 <img
                   src={profile}
-                  alt="Daniel León, desarrollador Full Stack"
+                  alt="Daniel León, fundador de Zero Agency"
                   loading="lazy"
                   className="relative h-36 w-36 rounded-full object-cover sm:h-44 sm:w-44"
                 />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Soy <strong className="text-foreground">Daniel León</strong>, desarrollador Full
-                  Stack con más de {siteConfig.yearsOfExperience} años creando soluciones digitales
-                  modernas. Me apasiona el detalle, el rendimiento y construir interfaces que la
-                  gente disfrute usar — desde el primer pixel hasta el despliegue.
+                  <strong className="text-foreground">Zero Agency</strong> es un estudio digital
+                  fundado por <strong className="text-foreground">Daniel León</strong>. Combinamos
+                  ingeniería sólida, diseño impecable y motion de alto nivel para construir
+                  productos rápidos, escalables y memorables — desde el primer pixel hasta el
+                  despliegue.
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
                   <Button asChild className="gap-2">
-                    <a href="/cv">
+                    <a href="/projects">
                       <FileText className="h-4 w-4" />
-                      Ver CV completo
+                      Ver proyectos
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="gap-2">
                     <a href={mailtoLink}>
                       <Mail className="h-4 w-4" />
-                      Escríbeme
+                      Hablemos
                     </a>
                   </Button>
                 </div>
@@ -284,7 +313,7 @@ const Home = () => {
           <span className="eyebrow">Hablemos</span>
           <h2 className="section-title mt-4">¿Tienes un proyecto en mente?</h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Estoy disponible para colaborar en nuevos retos. Cuéntame tu idea y construyámosla
+            En Zero Agency estamos listos para tu próximo reto. Cuéntanos tu idea y construyámosla
             juntos.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

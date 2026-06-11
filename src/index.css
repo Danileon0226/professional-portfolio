@@ -8,66 +8,66 @@
 
 @layer base {
   :root {
-    --background: 150 33% 99%;
-    --foreground: 160 35% 9%;
+    --background: 270 33% 99%;
+    --foreground: 260 35% 9%;
 
     --glass-bg: 0 0% 100% / 0.72;
     --card: 0 0% 100% / 0.72;
-    --card-foreground: 160 35% 9%;
+    --card-foreground: 260 35% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 160 35% 9%;
+    --popover-foreground: 260 35% 9%;
 
-    --primary: 150 84% 39%; /* Verde esmeralda de marca */
+    --primary: 262 83% 58%; /* Morado de marca Zero Agency */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 152 30% 94%;
-    --secondary-foreground: 158 70% 18%;
+    --secondary: 264 30% 95%;
+    --secondary-foreground: 263 60% 24%;
 
-    --muted: 152 20% 95%;
-    --muted-foreground: 158 12% 38%;
+    --muted: 264 20% 95%;
+    --muted-foreground: 260 12% 40%;
 
-    --accent: 146 80% 42%;
+    --accent: 290 80% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 152 18% 88%;
-    --input: 152 18% 88%;
-    --ring: 150 84% 39%;
+    --border: 264 20% 89%;
+    --input: 264 20% 89%;
+    --ring: 262 83% 58%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 162 55% 4%;
-    --foreground: 150 40% 96%;
+    --background: 255 38% 4%; /* Casi negro con tinte morado (#050409) */
+    --foreground: 264 40% 96%;
 
-    --glass-bg: 160 50% 8% / 0.55;
-    --card: 160 50% 8% / 0.55;
-    --card-foreground: 150 35% 92%;
+    --glass-bg: 258 40% 10% / 0.55;
+    --card: 258 40% 10% / 0.55;
+    --card-foreground: 264 35% 93%;
 
-    --popover: 162 55% 6%;
-    --popover-foreground: 150 40% 96%;
+    --popover: 255 38% 6%;
+    --popover-foreground: 264 40% 96%;
 
-    --primary: 147 96% 53%; /* Verde neón en modo oscuro */
-    --primary-foreground: 160 100% 6%;
+    --primary: 265 92% 68%; /* Morado vibrante en modo oscuro */
+    --primary-foreground: 260 100% 8%;
 
-    --secondary: 158 28% 16%;
-    --secondary-foreground: 150 60% 88%;
+    --secondary: 260 28% 17%;
+    --secondary-foreground: 264 60% 90%;
 
-    --muted: 160 22% 13%;
-    --muted-foreground: 152 18% 65%;
+    --muted: 258 24% 14%;
+    --muted-foreground: 260 16% 66%;
 
-    --accent: 146 80% 40%;
-    --accent-foreground: 150 100% 96%;
+    --accent: 290 80% 60%;
+    --accent-foreground: 264 100% 96%;
 
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 158 30% 18%;
-    --input: 158 30% 20%;
-    --ring: 147 96% 53%;
+    --border: 260 30% 20%;
+    --input: 260 30% 22%;
+    --ring: 265 92% 68%;
   }
 }
 
@@ -84,7 +84,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
     min-height: 100vh;
     background-image:
@@ -173,7 +173,7 @@
     background: linear-gradient(
       100deg,
       hsl(var(--primary)),
-      hsl(165 90% 55%) 45%,
+      hsl(300 90% 65%) 45%,
       hsl(var(--foreground))
     );
     -webkit-background-clip: text;
@@ -182,7 +182,7 @@
   }
 
   .text-gradient-brand {
-    background: linear-gradient(100deg, hsl(var(--primary)), hsl(168 95% 60%));
+    background: linear-gradient(100deg, hsl(var(--primary)), hsl(305 95% 68%));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -240,13 +240,13 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(145deg, hsl(var(--primary)), hsl(160 85% 40%));
+  background: linear-gradient(145deg, hsl(var(--primary)), hsl(300 85% 55%));
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(145deg, hsl(160 90% 45%), hsl(var(--primary)));
+  background: linear-gradient(145deg, hsl(300 90% 60%), hsl(var(--primary)));
   background-clip: content-box;
 }
 * {

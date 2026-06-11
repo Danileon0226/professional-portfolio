@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Outfit', 'Inter', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
         mono: ['Fira Code', 'monospace'],
       },

@@ -166,7 +166,7 @@ const projects: Project[] = [
     longDescription:
       'Experiencia web inmersiva construida con animaciones GSAP de alto impacto, scroll storytelling y un diseño audaz que comunica la identidad de la agencia. Optimizada en rendimiento y SEO.',
     tech: ['React', 'Vite', 'GSAP', 'Tailwind CSS'],
-    image: shot('https://zeroagency.com.co'),
+    image: 'https://www.zeroagency.com.co/images/og-cover.png',
     demo: 'https://zeroagency.com.co',
     category: 'Agencia',
     featured: true,
@@ -178,7 +178,7 @@ const projects: Project[] = [
     longDescription:
       'Sitio de scroll storytelling para la iniciativa IronHumans vs Cancer, con secciones animadas, narrativa visual potente y llamados a la acción para apoyar la causa.',
     tech: ['React', 'Vite', 'GSAP'],
-    image: shot('https://ironhumansvscancer.com'),
+    image: 'https://ironhumansvscancer.com/og-image.png',
     demo: 'https://ironhumansvscancer.com',
     category: 'Agencia',
     featured: true,
@@ -190,7 +190,7 @@ const projects: Project[] = [
     longDescription:
       'Sitio para la experiencia fotográfica Selfie Medellín, con transiciones fluidas, galería visual y una estética moderna centrada en la experiencia del visitante.',
     tech: ['React', 'Vite', 'GSAP'],
-    image: shot('https://selfiemedellin.com'),
+    image: 'https://selfiemedellin.com/og-image.png',
     demo: 'https://selfiemedellin.com',
     category: 'Agencia',
     featured: true,
@@ -214,7 +214,7 @@ const projects: Project[] = [
     longDescription:
       'Página comercial para la parcelación Santa Juliana, con galería de lotes, ubicación, beneficios del proyecto y formularios de contacto optimizados para conversión.',
     tech: ['React', 'Vite', 'Tailwind CSS'],
-    image: shot('https://parcelacionsantajuliana.com'),
+    image: 'https://parcelacionsantajuliana.com/og-image.jpg',
     demo: 'https://parcelacionsantajuliana.com',
     category: 'Agencia',
     featured: false,
@@ -226,7 +226,7 @@ const projects: Project[] = [
     longDescription:
       'Web corporativa para una empresa de comercio internacional, con enfoque comercial, presentación de servicios y estructura optimizada para SEO.',
     tech: ['React', 'Vite', 'Tailwind CSS'],
-    image: shot('https://globalsynergytrade.com'),
+    image: 'https://www.globalsynergytrade.com/og-image.jpg',
     demo: 'https://globalsynergytrade.com',
     category: 'Agencia',
     featured: false,
@@ -238,7 +238,7 @@ const projects: Project[] = [
     longDescription:
       'Portal para la fundación Un Mundo y Un Pueblo, con secciones de causas, programas de voluntariado, historias de impacto y canales de donación.',
     tech: ['React', 'Vite', 'Tailwind CSS'],
-    image: shot('https://unmundoyunpueblo.org'),
+    image: 'https://fundacionunmundoyunpueblo.org/og-image.jpg',
     demo: 'https://unmundoyunpueblo.org',
     category: 'Agencia',
     featured: false,

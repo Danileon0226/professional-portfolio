@@ -45,7 +45,7 @@ const About = () => {
         <Card className="mx-auto max-w-4xl overflow-hidden glass p-0">
           <CardContent className="flex flex-col items-center gap-8 p-6 sm:p-10 md:flex-row">
             <div className="relative shrink-0">
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary to-emerald-400 opacity-70 blur-md" />
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary to-fuchsia-500 opacity-70 blur-md" />
               <img
                 src="/images/CV FOTO.jpg"
                 alt="Daniel León, desarrollador Full Stack"
@@ -54,14 +54,16 @@ const About = () => {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <span className="eyebrow">Sobre mí</span>
+              <span className="eyebrow">Nosotros</span>
               <h1 className="mt-4 text-balance text-4xl font-extrabold tracking-tight sm:text-5xl">
-                Hola, soy <span className="text-gradient-brand">Daniel</span>
+                Sobre <span className="text-gradient-brand">Zero Agency</span>
               </h1>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Desarrollador Full Stack apasionado por la tecnología y la innovación. Me especializo
-                en crear soluciones digitales modernas y escalables con React, TypeScript, Next.js y
-                Node.js. Disfruto trabajar en equipo, aprender y enfrentar retos que me hagan crecer.
+                Somos un estudio digital fundado por{' '}
+                <strong className="text-foreground">Daniel León</strong>. Creamos software a medida,
+                sitios web de alto rendimiento, apps y e-commerce con React, TypeScript, Next.js y
+                Node.js. Nos obsesiona el detalle, el rendimiento y construir productos que la gente
+                disfrute usar.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
                 <Button asChild className="gap-2">
@@ -104,7 +106,7 @@ const About = () => {
 
       {/* Valores */}
       <section className="mb-24 sm:mb-32">
-        <SectionHeading eyebrow="Principios" title="Mis valores" />
+        <SectionHeading eyebrow="Principios" title="Nuestros valores" />
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value, idx) => (
             <motion.div
