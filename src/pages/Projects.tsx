@@ -14,9 +14,10 @@ import Vlips from '../../public/images/proyects/vlips.png';
 import Rrg from '../../public/images/proyects/rrg.png';
 import VerdeOrigen from '../../public/images/proyects/verdeorigen.png';
 import { ExternalLink } from 'lucide-react';
+import { shot, DEFAULT_PROJECT_IMAGE } from '../lib/screenshot';
 
 // Tipos de proyectos
-type ProjectCategory = 'Todos' | 'Web' | 'Mobile' | 'Desktop' | 'API';
+type ProjectCategory = 'Todos' | 'Agencia' | 'Web' | 'Mobile' | 'Desktop' | 'API';
 type TechStack = string;
 
 interface Project {
@@ -157,11 +158,133 @@ const projects: Project[] = [
     featured: false,
     date: '2025',
   },
+
+  // ───────────────── Zero Agency ─────────────────
+  {
+    title: 'Zero Agency',
+    description: 'Sitio oficial de mi agencia digital, Zero Agency.',
+    longDescription:
+      'Experiencia web inmersiva construida con animaciones GSAP de alto impacto, scroll storytelling y un diseño audaz que comunica la identidad de la agencia. Optimizada en rendimiento y SEO.',
+    tech: ['React', 'Vite', 'GSAP', 'Tailwind CSS'],
+    image: shot('https://zeroagency.com.co'),
+    demo: 'https://zeroagency.com.co',
+    category: 'Agencia',
+    featured: true,
+    date: '2026',
+  },
+  {
+    title: 'IronHumans vs Cancer',
+    description: 'Landing inmersiva para una causa social con animaciones GSAP.',
+    longDescription:
+      'Sitio de scroll storytelling para la iniciativa IronHumans vs Cancer, con secciones animadas, narrativa visual potente y llamados a la acción para apoyar la causa.',
+    tech: ['React', 'Vite', 'GSAP'],
+    image: shot('https://ironhumansvscancer.com'),
+    demo: 'https://ironhumansvscancer.com',
+    category: 'Agencia',
+    featured: true,
+    date: '2025',
+  },
+  {
+    title: 'Selfie Medellín',
+    description: 'Web experiencial con animaciones GSAP y diseño envolvente.',
+    longDescription:
+      'Sitio para la experiencia fotográfica Selfie Medellín, con transiciones fluidas, galería visual y una estética moderna centrada en la experiencia del visitante.',
+    tech: ['React', 'Vite', 'GSAP'],
+    image: shot('https://selfiemedellin.com'),
+    demo: 'https://selfiemedellin.com',
+    category: 'Agencia',
+    featured: true,
+    date: '2025',
+  },
+  {
+    title: 'Versus',
+    description: 'Experiencia web interactiva con transiciones cinematográficas.',
+    longDescription:
+      'Microsite con animaciones GSAP, efectos de scroll y transiciones cinematográficas que demuestran capacidades de motion design en la web.',
+    tech: ['React', 'Vite', 'GSAP'],
+    image: shot('https://versus-web-experience-gsap.vercel.app'),
+    demo: 'https://versus-web-experience-gsap.vercel.app',
+    category: 'Agencia',
+    featured: false,
+    date: '2025',
+  },
+  {
+    title: 'Parcelación Santa Juliana',
+    description: 'Sitio inmobiliario para lotes campestres.',
+    longDescription:
+      'Página comercial para la parcelación Santa Juliana, con galería de lotes, ubicación, beneficios del proyecto y formularios de contacto optimizados para conversión.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    image: shot('https://parcelacionsantajuliana.com'),
+    demo: 'https://parcelacionsantajuliana.com',
+    category: 'Agencia',
+    featured: false,
+    date: '2025',
+  },
+  {
+    title: 'Global Synergy Trade',
+    description: 'Sitio corporativo para comercio internacional.',
+    longDescription:
+      'Web corporativa para una empresa de comercio internacional, con enfoque comercial, presentación de servicios y estructura optimizada para SEO.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    image: shot('https://globalsynergytrade.com'),
+    demo: 'https://globalsynergytrade.com',
+    category: 'Agencia',
+    featured: false,
+    date: '2024',
+  },
+  {
+    title: 'Fundación Un Mundo y Un Pueblo',
+    description: 'Sitio institucional para una fundación social.',
+    longDescription:
+      'Portal para la fundación Un Mundo y Un Pueblo, con secciones de causas, programas de voluntariado, historias de impacto y canales de donación.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    image: shot('https://unmundoyunpueblo.org'),
+    demo: 'https://unmundoyunpueblo.org',
+    category: 'Agencia',
+    featured: false,
+    date: '2024',
+  },
+  {
+    title: 'Polla de Crisma',
+    description: 'App web de pollas y predicciones deportivas.',
+    longDescription:
+      'Aplicación para crear pollas y predicciones deportivas, con gestión de participantes, registro de pronósticos y seguimiento de resultados.',
+    tech: ['React', 'Vite'],
+    image: shot('https://polladecrisma.com'),
+    demo: 'https://polladecrisma.com',
+    category: 'Agencia',
+    featured: false,
+    date: '2025',
+  },
+  {
+    title: 'Medellín Experience',
+    description: 'Plataforma turística para descubrir Medellín.',
+    longDescription:
+      'Plataforma para explorar experiencias, planes y atractivos turísticos de Medellín, con un diseño visual atractivo orientado al viajero.',
+    tech: ['React', 'Vite'],
+    image: shot('https://medellin-experience-turistic-work.vercel.app'),
+    demo: 'https://medellin-experience-turistic-work.vercel.app',
+    category: 'Agencia',
+    featured: false,
+    date: '2025',
+  },
+  {
+    title: 'Waira',
+    description: 'Prototipo de aplicación de producto.',
+    longDescription:
+      'Prototipo funcional de la aplicación Waira, enfocado en la interfaz de usuario y el flujo de navegación del producto.',
+    tech: ['React', 'Vite'],
+    image: shot('https://app-prototype-waira-proyect.vercel.app'),
+    demo: 'https://app-prototype-waira-proyect.vercel.app',
+    category: 'Agencia',
+    featured: false,
+    date: '2025',
+  },
 ];
 
 const allTechnologies = Array.from(new Set(projects.flatMap((project) => project.tech))).sort();
 
-const categories: ProjectCategory[] = ['Todos', 'Web', 'Mobile', 'Desktop', 'API'];
+const categories: ProjectCategory[] = ['Todos', 'Agencia', 'Web', 'Mobile', 'Desktop', 'API'];
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('Todos');
@@ -240,6 +363,11 @@ export default function Projects() {
                   alt={`Captura del proyecto ${project.title}`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    if (e.currentTarget.src !== window.location.origin + DEFAULT_PROJECT_IMAGE) {
+                      e.currentTarget.src = DEFAULT_PROJECT_IMAGE;
+                    }
+                  }}
                 />
                 {project.featured && (
                   <Badge className="absolute top-2 right-2 bg-primary/90 backdrop-blur-sm">

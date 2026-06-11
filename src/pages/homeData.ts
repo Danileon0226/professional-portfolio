@@ -10,6 +10,7 @@ import HemoGroup from '../../public/images/proyects/hemogroup.png';
 import Construredes from '../../public/images/proyects/construredes.png';
 import Vlips from '../../public/images/proyects/vlips.png';
 import { Calendar, Folder, Users, GitBranch } from 'lucide-react';
+import { shot } from '../lib/screenshot';
 
 export const skills = [
   {
@@ -217,6 +218,90 @@ export const projects = [
     image: Vlips,
     github: 'https://github.com/yourusername/portfolio',
     demo: 'https://vlips.co/',
+  },
+
+  // ───────────────── Zero Agency ─────────────────
+  {
+    title: 'Zero Agency',
+    description:
+      'Sitio oficial de Zero Agency: experiencia inmersiva con animaciones GSAP de alto impacto.',
+    tech: ['React', 'Vite', 'GSAP', 'Tailwind CSS'],
+    image: shot('https://zeroagency.com.co'),
+    github: '',
+    demo: 'https://zeroagency.com.co',
+  },
+  {
+    title: 'IronHumans vs Cancer',
+    description:
+      'Landing inmersiva con scroll storytelling y animaciones GSAP para una causa social.',
+    tech: ['React', 'Vite', 'GSAP'],
+    image: shot('https://ironhumansvscancer.com'),
+    github: '',
+    demo: 'https://ironhumansvscancer.com',
+  },
+  {
+    title: 'Selfie Medellín',
+    description: 'Web experiencial para Selfie Medellín con animaciones GSAP y diseño envolvente.',
+    tech: ['React', 'Vite', 'GSAP'],
+    image: shot('https://selfiemedellin.com'),
+    github: '',
+    demo: 'https://selfiemedellin.com',
+  },
+  {
+    title: 'Versus',
+    description: 'Experiencia web interactiva con transiciones cinematográficas y GSAP.',
+    tech: ['React', 'Vite', 'GSAP'],
+    image: shot('https://versus-web-experience-gsap.vercel.app'),
+    github: '',
+    demo: 'https://versus-web-experience-gsap.vercel.app',
+  },
+  {
+    title: 'Parcelación Santa Juliana',
+    description: 'Sitio inmobiliario para lotes campestres: galería, ubicación y contacto.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    image: shot('https://parcelacionsantajuliana.com'),
+    github: '',
+    demo: 'https://parcelacionsantajuliana.com',
+  },
+  {
+    title: 'Global Synergy Trade',
+    description: 'Sitio corporativo para empresa de comercio internacional con enfoque comercial.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    image: shot('https://globalsynergytrade.com'),
+    github: '',
+    demo: 'https://globalsynergytrade.com',
+  },
+  {
+    title: 'Fundación Un Mundo y Un Pueblo',
+    description: 'Sitio institucional para una fundación social: causas, voluntariado y donaciones.',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+    image: shot('https://unmundoyunpueblo.org'),
+    github: '',
+    demo: 'https://unmundoyunpueblo.org',
+  },
+  {
+    title: 'Polla de Crisma',
+    description: 'App web de pollas y predicciones deportivas con gestión de participantes.',
+    tech: ['React', 'Vite'],
+    image: shot('https://polladecrisma.com'),
+    github: '',
+    demo: 'https://polladecrisma.com',
+  },
+  {
+    title: 'Medellín Experience',
+    description: 'Plataforma turística para descubrir experiencias y planes en Medellín.',
+    tech: ['React', 'Vite'],
+    image: shot('https://medellin-experience-turistic-work.vercel.app'),
+    github: '',
+    demo: 'https://medellin-experience-turistic-work.vercel.app',
+  },
+  {
+    title: 'Waira',
+    description: 'Prototipo de aplicación Waira: interfaz de producto y flujo de usuario.',
+    tech: ['React', 'Vite'],
+    image: shot('https://app-prototype-waira-proyect.vercel.app'),
+    github: '',
+    demo: 'https://app-prototype-waira-proyect.vercel.app',
   },
 ];
 
