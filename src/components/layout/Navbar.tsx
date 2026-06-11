@@ -11,7 +11,7 @@ const navItems = [
   { label: 'INICIO', href: '/' },
   { label: 'PROYECTOS', href: '/projects' },
   { label: 'SOBRE MÍ', href: '/about' },
-  { label: 'ESTACION DE TRABAJO', href: '/workstation' },
+  { label: 'ESTACIÓN', href: '/workstation' },
 ];
 
 const Navbar = () => {
@@ -89,7 +89,7 @@ const Navbar = () => {
                   {location.pathname === item.href && (
                     <motion.span
                       layoutId="underline"
-                      className="absolute left-0 right-0 -bottom-1 h-0.5 bg-gradient-to-r from-green-500 to-green-900 rounded"
+                      className="absolute left-0 right-0 -bottom-1 h-0.5 rounded bg-gradient-to-r from-primary to-emerald-400"
                     />
                   )}
                 </Link>
@@ -118,10 +118,10 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
           <Button
-            className="bg-gradient-to-r from-green-500 to-green-900 text-white hover:from-green-600 hover:to-green-950 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
+            className="flex items-center gap-2 bg-gradient-to-r from-primary to-emerald-500 px-5 py-2 text-base font-bold text-primary-foreground shadow-glow transition-all hover:scale-[1.03]"
             asChild
           >
-            <Link to="/contact" aria-label="Ir a contacto">
+            <a href="/#contacto" aria-label="Ir a contacto">
               <span>CONTACTO</span>
               <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
                 <path
@@ -132,7 +132,7 @@ const Navbar = () => {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
@@ -204,10 +204,10 @@ const Navbar = () => {
                   ),
                 )}
                 <Button
-                  className="mt-6 bg-gradient-to-r from-green-500 to-green-900 text-white hover:from-green-600 hover:to-green-950 shadow-lg flex items-center gap-2 px-5 py-2 text-base font-bold"
+                  className="mt-6 flex items-center gap-2 bg-gradient-to-r from-primary to-emerald-500 px-5 py-2 text-base font-bold text-primary-foreground shadow-glow"
                   asChild
                 >
-                  <Link to="/contact" aria-label="Ir a contacto" onClick={() => setMenuOpen(false)}>
+                  <a href="/#contacto" aria-label="Ir a contacto" onClick={() => setMenuOpen(false)}>
                     <span>CONTACTO</span>
                     <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
                       <path
@@ -218,7 +218,7 @@ const Navbar = () => {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                  </Link>
+                  </a>
                 </Button>
                 <div className="mt-4">
                   <ThemeToggle />

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { SectionHeading } from '../components/ui/section-heading';
 import Afan from '../../public/images/proyects/afan.png';
 import Terminal from '../../public/images/proyects/terminalsur.png';
 import Tecnotics from '../../public/images/proyects/tecnotics.png';
@@ -176,18 +177,12 @@ export default function Projects() {
   return (
     <>
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-16"
-      >
-        <h1 className="text-4xl font-bold mb-4 text-foreground">Mis Proyectos</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Explora mi portafolio de proyectos, desde aplicaciones web hasta soluciones móviles y
-          APIs.
-        </p>
-      </motion.div>
+      <SectionHeading
+        eyebrow="Portafolio"
+        title="Mis proyectos"
+        description="Explora mi trabajo: desde aplicaciones web hasta soluciones móviles y APIs."
+      />
+      <h1 className="sr-only">Proyectos de Daniel León — Desarrollador Full Stack</h1>
 
       {/* Filters */}
       <div className="mb-12 space-y-6">
@@ -238,12 +233,13 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="group h-full flex flex-col backdrop-blur  hover:shadow-lg transition-all duration-300">
+            <Card className="group flex h-full flex-col overflow-hidden glass p-0 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow">
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  alt={`Captura del proyecto ${project.title}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {project.featured && (
                   <Badge className="absolute top-2 right-2 bg-primary/90 backdrop-blur-sm">

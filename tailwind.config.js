@@ -26,7 +26,7 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--glass-bg))',
+        background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -88,11 +88,47 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        'ping-slow': {
+          '75%, 100%': { transform: 'scale(1.8)', opacity: '0' },
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        'gradient-x': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(24px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'aurora-drift': {
+          '0%, 100%': { transform: 'translate3d(0,0,0) scale(1)' },
+          '33%': { transform: 'translate3d(3%,-4%,0) scale(1.08)' },
+          '66%': { transform: 'translate3d(-3%,3%,0) scale(0.96)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         float: 'float 3s ease-in-out infinite',
+        'ping-slow': 'ping-slow 2.6s cubic-bezier(0,0,0.2,1) infinite',
+        marquee: 'marquee 40s linear infinite',
+        'gradient-x': 'gradient-x 6s ease infinite',
+        shimmer: 'shimmer 2.5s infinite',
+        'fade-up': 'fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both',
+        'aurora-drift': 'aurora-drift 18s ease-in-out infinite',
+      },
+      backgroundSize: {
+        '200': '200% 200%',
+      },
+      boxShadow: {
+        glow: '0 0 0 1px hsl(var(--primary) / 0.25), 0 8px 40px -8px hsl(var(--primary) / 0.45)',
+        'glow-lg': '0 0 60px -12px hsl(var(--primary) / 0.55)',
       },
       inset: {
         0: '0',

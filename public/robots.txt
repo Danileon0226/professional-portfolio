@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://tusitio.com/sitemap.xml 
+
+Sitemap: https://professional-portfolio-git-main-danis-projects-b2ee6899.vercel.app/sitemap.xml

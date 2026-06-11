@@ -3,11 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 const breadcrumbNameMap: Record<string, string> = {
   "": "Inicio",
   projects: "Proyectos",
+  about: "Sobre mí",
+  workstation: "Estación de trabajo",
+  cv: "CV",
 };
 
 export default function Breadcrumbs() {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
+
+  // No mostramos breadcrumbs en la home
+  if (pathnames.length === 0) return null;
 
   return (
     <div className="container mx-auto px-4 sm:px-6">

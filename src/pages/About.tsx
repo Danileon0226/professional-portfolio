@@ -1,315 +1,161 @@
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '../components/ui/card';
 import { SkillCard } from '../components/ui/skill-card';
+import { SectionHeading } from '../components/ui/section-heading';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { Mail, Download, User, Calendar } from 'lucide-react';
-
-const skills = [
-  {
-    name: 'HTML',
-    icon: '/images/skills/html-5.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'CSS',
-    icon: '/images/skills/css.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'JavaScript',
-    icon: '/images/skills/javascript.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'React',
-    icon: '/images/skills/react.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'Vite',
-    icon: '/images/skills/vitejs.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'TypeScript',
-    icon: '/images/skills/typescript.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 2,
-  },
-  {
-    name: 'Material UI',
-    icon: '/images/skills/material-ui.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'Shadcn UI',
-    icon: '/images/skills/shadcn-ui.svg',
-    level: 'Básico' as const,
-    yearsOfExperience: 1,
-  },
-  {
-    name: 'Next.js',
-    icon: '/images/skills/nextjs.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 2,
-  },
-  {
-    name: 'Jest',
-    icon: '/images/skills/jest.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 2,
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: '/images/skills/tailwind.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 2,
-  },
-  {
-    name: 'PostgreSQL',
-    icon: '/images/skills/postgresql.svg',
-    level: 'Intermedio' as const,
-    yearsOfExperience: 2,
-  },
-  {
-    name: 'Node.js',
-    icon: '/images/skills/nodejs.svg',
-    level: 'Intermedio' as const,
-    yearsOfExperience: 2,
-  },
-  {
-    name: 'MongoDB',
-    icon: '/images/skills/mongodb.svg',
-    level: 'Intermedio' as const,
-    yearsOfExperience: 1,
-  },
-  {
-    name: 'Git',
-    icon: '/images/skills/git.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'GitHub',
-    icon: '/images/skills/github.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'AWS',
-    icon: '/images/skills/aws.svg',
-    level: 'Básico' as const,
-    yearsOfExperience: 1,
-  },
-  {
-    name: 'Vercel',
-    icon: '/images/skills/vercel.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'ChatGPT',
-    icon: '/images/skills/chatgpt.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-  {
-    name: 'Hostinger',
-    icon: '/images/skills/hostinger.svg',
-    level: 'Avanzado' as const,
-    yearsOfExperience: 3,
-  },
-];
-
-const experiences = [
-  {
-    company: 'Periferia It Group',
-    position: 'Software Engineer Front',
-    period: '2024 - Presente',
-    description: 'Desarrollo de aplicaciones web modernas utilizando React y TypeScript.',
-    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
-  },
-  {
-    company: 'TecnoTics',
-    position: 'Full Stack Developer',
-    period: '2023 - 2024',
-    description: 'Desarrollo full stack de aplicaciones web y móviles.',
-    technologies: ['Node.js', 'React Native', 'PostgreSQL', 'AWS'],
-  },
-  {
-    company: 'Crystal S.A.S',
-    position: 'Desarrollador Web',
-    period: '2022 - 2023',
-    description: 'Desarrollo full stack de aplicaciones web y móviles.',
-    technologies: ['Node.js', 'React Native', '.NET', 'AWS'],
-  },
-];
+import { Mail, FileText, Calendar, Github, Linkedin, Lightbulb, Users, GraduationCap, ShieldCheck } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { skills, experiences } from './homeData';
+import { siteConfig, mailtoLink, whatsappLink } from '../lib/site';
 
 const values = [
   {
+    icon: Lightbulb,
     title: 'Innovación',
-    description: 'Siempre busco soluciones creativas y actuales para cada reto tecnológico.',
+    description: 'Busco soluciones creativas y actuales para cada reto tecnológico.',
   },
   {
+    icon: Users,
     title: 'Colaboración',
-    description:
-      'Creo en el trabajo en equipo y la comunicación efectiva para lograr grandes resultados.',
+    description: 'Creo en el trabajo en equipo y la comunicación efectiva para lograr resultados.',
   },
   {
+    icon: GraduationCap,
     title: 'Aprendizaje continuo',
-    description:
-      'Me mantengo actualizado y en constante formación para ofrecer lo mejor a mis clientes y equipos.',
+    description: 'Me mantengo actualizado para ofrecer siempre lo mejor a clientes y equipos.',
   },
   {
+    icon: ShieldCheck,
     title: 'Calidad',
-    description:
-      'Cuido cada detalle y aplico buenas prácticas para entregar productos robustos y escalables.',
+    description: 'Cuido cada detalle y aplico buenas prácticas para entregar productos robustos.',
   },
 ];
 
 const About = () => {
   return (
     <>
-      {/* Hero/Presentación */}
+      {/* Presentación */}
       <motion.section
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="mb-24"
+        transition={{ duration: 0.7 }}
+        className="mb-24 sm:mb-32"
       >
-        <Card className="max-w-4xl mx-auto shadow-xl border bg-gradient-to-br backdrop-blur   from-background via-green-50/60 to-green-50/40 dark:from-background dark:via-green-900/30 dark:to-green-900/20">
-          <CardContent className="p-8">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.7 }}
-                className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-primary/30"
-              >
-                <img
-                  src="/images/CV FOTO.jpg"
-                  alt="Foto de perfil"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <div className="flex-1">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground dark:text-white">
-                  Sobre Mí
-                </h1>
-                <p className="text-lg mb-4">
-                  ¡Hola! Soy Daniel-Zero, desarrollador Full Stack apasionado por la tecnología y la
-                  innovación. Me especializo en crear soluciones digitales modernas y escalables,
-                  con experiencia en React, TypeScript, Node.js y más. Disfruto trabajar en equipo,
-                  aprender nuevas tecnologías y enfrentar retos que me permitan crecer
-                  profesionalmente.
-                </p>
-                <div className="flex gap-4 flex-wrap mb-4">
-                  <Button asChild variant="outline" className="gap-2">
-                    <a href="/cv">
-                      <User className="w-4 h-4" />
-                      Ver CV Completo
-                    </a>
-                  </Button>
-                  <Button asChild variant="default" className="gap-2">
-                    <a href="/cv.pdf" download>
-                      <Download className="w-4 h-4" />
-                      Descargar CV
-                    </a>
-                  </Button>
-                </div>
-                <ul className="list-disc pl-5 text-muted-foreground mb-2">
-                  <li>+4 años de experiencia en desarrollo web</li>
-                  <li>Enfoque en frontend moderno y backend escalable</li>
-                  <li>Apasionado por la formación continua y la colaboración</li>
-                </ul>
+        <Card className="mx-auto max-w-4xl overflow-hidden glass p-0">
+          <CardContent className="flex flex-col items-center gap-8 p-6 sm:p-10 md:flex-row">
+            <div className="relative shrink-0">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary to-emerald-400 opacity-70 blur-md" />
+              <img
+                src="/images/CV FOTO.jpg"
+                alt="Daniel León, desarrollador Full Stack"
+                loading="lazy"
+                className="relative h-44 w-44 rounded-full object-cover"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <span className="eyebrow">Sobre mí</span>
+              <h1 className="mt-4 text-balance text-4xl font-extrabold tracking-tight sm:text-5xl">
+                Hola, soy <span className="text-gradient-brand">Daniel</span>
+              </h1>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Desarrollador Full Stack apasionado por la tecnología y la innovación. Me especializo
+                en crear soluciones digitales modernas y escalables con React, TypeScript, Next.js y
+                Node.js. Disfruto trabajar en equipo, aprender y enfrentar retos que me hagan crecer.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
+                <Button asChild className="gap-2">
+                  <a href="/cv">
+                    <FileText className="h-4 w-4" />
+                    Ver CV completo
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="gap-2">
+                  <a href={mailtoLink}>
+                    <Mail className="h-4 w-4" />
+                    Escríbeme
+                  </a>
+                </Button>
+              </div>
+              <div className="mt-5 flex justify-center gap-3 md:justify-start">
+                <a
+                  href={siteConfig.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href={siteConfig.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </CardContent>
         </Card>
       </motion.section>
 
-      {/* Valores personales */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-24"
-      >
-        <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
-          Mis Valores
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      {/* Valores */}
+      <section className="mb-24 sm:mb-32">
+        <SectionHeading eyebrow="Principios" title="Mis valores" />
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value, idx) => (
             <motion.div
               key={value.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-card rounded-xl shadow-md p-6 border backdrop-blur  border-border/30"
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="rounded-2xl glass p-6 transition-transform hover:-translate-y-1.5"
             >
-              <h3 className="font-semibold text-xl mb-2 text-primary">{value.title}</h3>
-              <p className="text-muted-foreground text-sm">{value.description}</p>
+              <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3">
+                <value.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mb-2 text-lg font-semibold">{value.title}</h3>
+              <p className="text-sm text-muted-foreground">{value.description}</p>
             </motion.div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      {/* Habilidades técnicas */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-24"
-      >
-        <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
-          Habilidades Técnicas
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      {/* Habilidades */}
+      <section className="mb-24 sm:mb-32">
+        <SectionHeading eyebrow="Stack" title="Habilidades técnicas" />
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
           {skills.map((skill) => (
             <SkillCard key={skill.name} {...skill} />
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      {/* Experiencia profesional */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-24"
-      >
-        <h2 className="text-3xl font-bold mb-12 text-center text-foreground dark:text-white">
-          Experiencia Profesional
-        </h2>
-        <div className="max-w-4xl mx-auto space-y-8">
+      {/* Experiencia */}
+      <section className="mb-24 sm:mb-32">
+        <SectionHeading eyebrow="Trayectoria" title="Experiencia profesional" />
+        <div className="mx-auto max-w-3xl space-y-6">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.company}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="relative overflow-hidden border-l-4 border-primary backdrop-blur ">
+              <Card className="relative overflow-hidden border-l-4 border-primary glass p-0">
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {exp.period}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">{exp.position}</h3>
-                  <h4 className="text-lg text-primary mb-4">{exp.company}</h4>
-                  <p className="text-muted-foreground mb-4">{exp.description}</p>
+                  <h3 className="text-xl font-semibold">{exp.position}</h3>
+                  <h4 className="mb-3 text-primary">{exp.company}</h4>
+                  <p className="mb-4 text-muted-foreground">{exp.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <Badge key={tech} variant="secondary">
@@ -322,46 +168,38 @@ const About = () => {
             </motion.div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
-      {/* Contacto directo */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-24"
-      >
-        <h2 className="text-3xl font-bold mb-8 text-center text-foreground dark:text-white">
-          ¿Te gustaría trabajar conmigo?
-        </h2>
-        <Card className="max-w-2xl mx-auto backdrop-blur border border-border/30 shadow-xl">
-          <CardContent className="p-8">
-            <p className="text-lg mb-8 text-center">
-              Estoy siempre abierto a nuevas oportunidades, colaboraciones y proyectos interesantes.
-              ¡No dudes en escribirme!
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button asChild variant="default" size="lg" className="flex-1">
-                <a href="mailto:daniel.salgado.dev@gmail.com">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Enviar Email
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="flex-1">
-                <a
-                  href="https://wa.me/573117502382?text=¡Hola!%20Vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte%20para%20un%20proyecto."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  WhatsApp Directo
-                </a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </motion.section>
+      {/* Contacto */}
+      <section>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl glass p-8 text-center sm:p-12"
+        >
+          <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
+          <h2 className="section-title">¿Trabajamos juntos?</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            Estoy abierto a nuevas oportunidades, colaboraciones y proyectos interesantes.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="gap-2 shadow-glow">
+              <a href={mailtoLink}>
+                <Mail className="h-5 w-5" />
+                Enviar email
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="gap-2">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="h-5 w-5" />
+                WhatsApp directo
+              </a>
+            </Button>
+          </div>
+        </motion.div>
+      </section>
     </>
   );
 };

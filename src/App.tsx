@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import './components/ui/HackerMode.css';
 import MouseFollower from './components/ui/MouseFollower';
+import { whatsappLink } from './lib/site';
 
 function ThemeInitializer() {
   useEffect(() => {
@@ -23,7 +24,7 @@ function App() {
 
       {/* Botón flotante de WhatsApp ultralujoso */}
       <a
-        href="https://wa.me/573117502382?text=¡Hola!%20Vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte%20para%20un%20proyecto."
+        href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         className="group fixed z-50 bottom-6 right-6 backdrop-blur-2xl bg-emerald-500/60 hover:bg-emerald-400/50 text-white rounded-full p-5 flex items-center justify-center shadow-[0_8px_30px_rgba(52,211,153,0.35)] border border-white/30 ring-2 ring-emerald-300/30 transition-all duration-300 ease-in-out hover:scale-110 animate-float"
