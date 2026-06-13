@@ -355,8 +355,14 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
+            onMouseMove={(e) => {
+              const r = e.currentTarget.getBoundingClientRect();
+              e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+              e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+            }}
+            className="h-full"
           >
-            <Card className="group flex h-full flex-col overflow-hidden glass p-0 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow">
+            <Card className="spotlight group flex h-full flex-col overflow-hidden glass p-0 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow">
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.image}
@@ -369,6 +375,7 @@ export default function Projects() {
                     }
                   }}
                 />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-70" />
                 {project.featured && (
                   <Badge className="absolute top-2 right-2 bg-primary/90 backdrop-blur-sm">
                     Destacado

@@ -5,6 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import Hero from '../components/Hero';
+import TechMarquee from '../components/ui/TechMarquee';
 import InspirationWidget from '../components/ui/InspirationWidget';
 import { SkillCard } from '../components/ui/skill-card';
 import { SectionHeading } from '../components/ui/section-heading';
@@ -26,6 +27,14 @@ const Home = () => {
     <>
       <Hero />
 
+      {/* Cinta de stack tecnológico */}
+      <section className="mb-20 sm:mb-28" aria-label="Stack tecnológico">
+        <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+          Tecnologías con las que construimos
+        </p>
+        <TechMarquee />
+      </section>
+
       {/* Servicios */}
       <section id="servicios" className="mb-24 scroll-mt-24 sm:mb-32">
         <SectionHeading
@@ -33,7 +42,7 @@ const Home = () => {
           title="Lo que hacemos"
           description="Diseño y tecnología de punta a punta para llevar tu marca al siguiente nivel."
         />
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
@@ -41,14 +50,18 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.06 }}
-              className="group relative overflow-hidden rounded-2xl glass p-6 transition-all hover:-translate-y-1.5 hover:shadow-glow"
+              onMouseMove={(e) => {
+                const r = e.currentTarget.getBoundingClientRect();
+                e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+                e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+              }}
+              className="spotlight border-gradient group relative overflow-hidden rounded-2xl glass p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow"
             >
-              <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-primary/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
-              <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3">
+              <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-110">
                 <service.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="mb-2 text-lg font-semibold">{service.title}</h3>
-              <p className="text-sm text-muted-foreground">{service.description}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
             </motion.div>
           ))}
         </div>
@@ -196,7 +209,7 @@ const Home = () => {
         <SectionHeading
           eyebrow="Portafolio"
           title="Proyectos destacados"
-          description="Una selección de productos que he construido para clientes reales."
+          description="Una selección de productos que hemos construido para clientes reales."
         />
         <Carousel opts={{ align: 'start', loop: true }} className="mx-auto w-full max-w-6xl px-6 sm:px-4">
           <CarouselContent>
@@ -207,7 +220,12 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="group h-full overflow-hidden rounded-2xl glass transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow"
+                  className="spotlight group h-full overflow-hidden rounded-2xl glass transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow"
+                  onMouseMove={(e) => {
+                    const r = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+                    e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+                  }}
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
@@ -264,7 +282,7 @@ const Home = () => {
 
       {/* Testimonials */}
       <section id="testimonios" className="mb-24 overflow-x-hidden sm:mb-32">
-        <SectionHeading eyebrow="Recomendaciones" title="Lo que dicen de mi trabajo" />
+        <SectionHeading eyebrow="Recomendaciones" title="Lo que dicen de nosotros" />
         <Carousel
           opts={{ align: 'center', loop: true, dragFree: true }}
           className="mx-auto w-full max-w-5xl px-4 sm:px-0"

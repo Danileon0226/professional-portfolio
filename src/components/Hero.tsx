@@ -25,9 +25,10 @@ const Hero = () => {
       {/* Fondo: aurora + grid */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
-        <div className="absolute left-1/2 top-1/4 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] animate-aurora-drift" />
+        <div className="absolute left-1/2 top-1/4 h-[40rem] w-[40rem] max-w-[90vw] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px] animate-aurora-drift" />
         <div className="absolute right-[8%] top-[12%] h-72 w-72 rounded-full bg-fuchsia-500/20 blur-[100px] animate-aurora-drift" />
         <div className="absolute bottom-0 left-[6%] h-72 w-72 rounded-full bg-violet-500/10 blur-[100px] animate-aurora-drift" />
+        <div className="absolute left-1/2 top-1/3 h-[28rem] w-[28rem] max-w-[80vw] -translate-x-1/2 rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,hsl(var(--primary)/0.12),transparent_40%,hsl(300_90%_60%/0.12),transparent_75%)] blur-2xl" />
       </div>
 
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
@@ -50,7 +51,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="mt-6 text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl"
+          className="text-fluid-hero mt-6 text-balance font-extrabold"
         >
           Diseñamos y construimos{' '}
           <span className="text-gradient-brand">software extraordinario</span>
@@ -150,7 +151,7 @@ const Hero = () => {
 
       {/* Indicador de scroll */}
       <motion.a
-        href="#sobre-mi"
+        href="#servicios"
         aria-label="Desplázate hacia abajo"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
